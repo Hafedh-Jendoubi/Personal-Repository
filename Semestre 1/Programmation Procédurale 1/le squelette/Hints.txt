@@ -1,5 +1,0 @@
-To make sure two strings are the same,
-strcmp(ch1, ch2)==0 -> ch1=ch2
-
-To make random numbers every execution, you must use:
-srand(time(NULL)); under Main() {
