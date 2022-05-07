@@ -1,0 +1,83 @@
+Exercice 1:
+
+Procédure DivMod(a, b: entier)
+Variable r, s : entier
+Début
+s <- 0
+r <- a
+Tantque (r>=b)
+  r <- r - b
+  s <- s + 1
+Fin Tantque
+Ecrire(r)
+Ecrire(s)
+Fin DivMod
+
+----------------------------------------------
+
+Exercice 4:
+
+Algorithme parfaits
+var
+  i, n, j, s : Entier
+
+Fonction Parf(x: entier): boleen
+Var
+  s, j: entier
+Début
+s <- 0
+Pour j de 1 à (x Div 2) faire
+  Si((x Mod j)=0) alors
+    s <- s + j
+  Fin Si
+Fin Pour
+
+Si(s = x) alors
+  Ecrire(x, " est un nombre parfait")
+Sinon 
+  Ecrire(x, " n'est pas un nombre parfait")
+Parf <- faux
+Fin Si
+Fin
+
+Début
+  Pour i de 1 à 10000 Faire
+    Si(parf(i)=vrai) alors
+      Ecrire(i, " est un nombre parfait")
+    Fin Si
+  Fin Pour
+Fin
+
+----------------------------------------------
+
+Exercice 6:
+
+Algorithme Ex6
+var x: entier
+    r: caractere
+
+fonction test(c: char): boleen
+  si(c="O" ou c="o") alors
+    test <- vrai
+  sinon
+    test <- faux
+  fin si
+fin test
+
+procedure aff_multi(n: entier)
+  var i: entier
+Début
+    Pour i de 1 a 9 faire
+      Ecrire(i*n)
+    Fin Pour
+Fin aff_multi
+
+Debut
+  Repeter
+    Ecrire("Donner un entier")
+    Lire(x)
+    aff_multi(x)
+    ecrire("Voulez vous choisir un autre entier")
+    lire(r)
+  Jusqu'à (non(test(r)))
+fin

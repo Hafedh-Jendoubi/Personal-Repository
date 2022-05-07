@@ -1,0 +1,136 @@
+Exercice 2:
+
+208 5 -34
+208 5 -34
+A = 104
+B = 10
+C = 114
+104 10 114
+208 5 114
+
+---------------------------------------
+
+Exercice 4:
+
+*P + 2 = 12 + 2 = 14
+*(P + 2) = 34
+&A[4] - 3 = P + 3 - 3 = P = &A[1]
+A + 3 = &A[1] + 3 = P + 3 = &A[4]
+P + (*P - 10) = P + 2 = &A[3]
+*(P+*(P+8) - A[8]) = A
+
+---------------------------------------
+
+Exercice 5:
+
+Algortihme Ex5
+Var A, B: Tableau [1..100] de Entier
+    N, M, i: Entier
+
+Debut
+  Lire(N)
+  Lire(M)
+  Pour i de 1 à N faire
+    Lire(*(A+i-1))
+  Fin Pour
+  Pour i de 1 à M faire
+    Lire(*(B+i-1))
+  Fin Pour
+  Pour i de 1 à M faire
+    *(A+N-1+i) <- *(B+i-1)
+  Fin Pour
+  Pour i de 1 à N+M faire
+    Ecrire(A[i], " | ")
+  Fin Pour
+Fin
+
+---------------------------------------
+
+Exercice 6:
+
+Algorithme Ex6
+Type
+  Tab = Tableau [1..100] de Entier
+
+Var
+  T: Tab
+  n: Entier
+
+Fonction Somme(T: Tab, n: Entier): Entier
+  Var
+    P: *Entier
+    S: Entier
+  Début
+    s <- 0
+    Pour P de T à T+n-1 faire
+      s <- s + *P
+    Fin Pour
+    Somme <- s
+  Fin
+
+Début
+  Somme(T, n)
+Fin
+
+---------------------------------------
+
+Exercice 7:
+
+Algorithme Ex7
+Type
+  Tab = Tableau [1..100] de Entier
+  
+Var
+(*Variables Gloabls*)
+  A: Tab
+  a, n: Entier
+
+Procédure Saisie(A: Tab, n: *Entier, x: *Entier)
+  Var
+    P: *Entier
+  Début
+    Lire(*n)
+    Lire(*x)
+    Pour P de A à A+(*n)-1 faire
+      Lire(*P)
+    Fin Pour
+  Fin
+
+Procédure SuppOCC(A: Tab, n: *Entier, x: Entier)
+  Var
+    P, P1: *Entier
+  Début
+    P1 <- A
+    Pour P de A à A+(*n)-1 faire
+      *P1 <- *P
+      Si (*P1<>x) alors
+        P1 <- P1 + 1
+      Fin Si
+    Fin Pour
+    *n <- P1 - A
+  Fin
+
+Procédure AfficheTab(T: Tab, n: Entier)
+  Var
+    P: *Entier
+  Début
+    Pour P de T à T+n-1 faire
+      Ecrire(*P)
+    Fin Pour
+  Fin
+
+Début
+  Saisie(A, &n, &a)
+  AfficheTab(A, n)
+  SuppOCC(A, &n, a)
+Fin
+
+
+
+
+
+
+
+
+
+

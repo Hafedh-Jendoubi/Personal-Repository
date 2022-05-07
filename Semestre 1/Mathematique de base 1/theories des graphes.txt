@@ -1,0 +1,17 @@
+Les coefficients diagonaux sont nuls => Pas de boucles
+Les coefficients non diagonaux sont 0 ou 1 => Pas de liens multiples
+-----------------------
+=> Graphe simple
+
+Matrice non symetrique => Graphe Orienté
+
+Si il y'a 0 au dessus ou au dessous du diagonal => Graphe pas complet
+
+Theroeme de poignée des mains:
+      s - a + f = 2
+
+On a: a >= (n-1)(n-2)/2 + 1 avec a: nombre des arrets
+                                 n: nombre des sommets
+
+Un cycle eulerién existe si tous les sommets sont de degré pair
+Une chaine euleriénne existe si on a 0 ou 2 sommets de degré impair

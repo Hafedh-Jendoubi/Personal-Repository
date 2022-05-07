@@ -1,0 +1,98 @@
+Exercice 1:
+
+Algorithme miroir
+  Type mot = Chaine[20]
+  Variable
+    str, mir: mot
+    i: entier
+Debut
+  Ecrire("Taper une chaine de caractere: ")
+  Lire(str)
+  Pour i allant de 1 à n faire
+    mir[i] 🡨 str[long(str)-i+1]
+  Fin Pour
+  Ecrire("Le miroir de ' ", str, " ' est ' ", mir, " ' ")
+Fin
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Exercice 2:
+
+Algorithme Occurrence
+  Type ch = Chaine[20]
+  Variable
+    str: ch
+    c: caractere
+    i, occ: entier
+Debut
+  Ecrire("Taper une chaine de caractere: ")
+  Lire(str)
+  Ecrire("Enter a character to find the frequency")
+  Lire(c)
+  occ🡨0
+  Pour i allant de 1 à LONG(str) faire
+    Si (c=str[i]) alors
+      occ 🡨 occ + 1
+    FinSi
+  FinPour
+  Ecrire ("frequency of ",c, "=", occ)
+Fin
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Exercice 3:      ((DOESN'T WORK))
+
+Algorithme voyelle
+  Type ch = Chaine[20]
+  Variable
+    mot, mot1: ch
+    i: entier
+Debut
+  Ecrire("Taper une chaine de caractere: ")
+  Lire(mot)
+  Pour i allant de 1 a long(mot)  faire
+    Si ((majus(mot[i])="A")ou(majus(mot[i])='E')ou(majus(mot[i])='I')ou(majus(mot[i])='O')ou(majus(mot[i])='U')ou(majus(mot[i])='Y')) alors
+      Pour j allant de i a long(mot) faire
+        mot[j] 🡨 mot[j+1]
+      Fin Pour
+    Sinon
+      mot1[i] 🡨 mot[i]
+    Finsi
+    i 🡨 i - 1
+    long(mot) 🡨 long(mot) - 1
+  Fin pour
+  Ecrire("'", mot, "' => '", mot1, "'")
+Fin
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Exercice 4:
+
+Algorithme ecx4
+  Type ch = Chaine[20]
+  Variable 
+    mot: ch
+    i, voy, min, maj: entier
+Debut
+  Ecrire("Donner une chaine de caractere: ")
+  Lire(mot)
+  voy🡨0, min🡨0, maj🡨0
+  Pour i allant de 1 a long(mot) faire
+    Si ((asc(mot[i])>=65) et ((asc(mot[i])<=90)) alors
+      maj 🡨 maj + 1
+    Sinon Si ((asc(mot[i])>=90) et ((asc(mot[i])<=122)) alors
+      min 🡨 min + 1
+    Sinon Si ((majus(mot[i])="A")ou(majus(mot[i])='E')ou(majus(mot[i])='I')ou(majus(mot[i])='O')ou(majus(mot[i])='U')ou(majus(mot[i])='Y')) alors
+      voy 🡨 voy + 1
+    Finsi
+    Finsi
+    Finsi
+  Fin Pour
+  Ecrire("Le nombre de lettres majuscules = ", maj)
+  Ecrire("Le nombre de lettres minuscules = ", min)
+  Ecrire("Le nombre de voyelles = ", voy)
+Fin
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Exercice 5:

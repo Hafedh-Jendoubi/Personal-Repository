@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1634896518 source:c:\users\hafeu\desktop\1a23\programmation procédurale 1\semaine 5 - les tableaux (1-2)\exercices de cours\ex1\main.c
+	<stdio.h>
+	<stdbool.h>
+

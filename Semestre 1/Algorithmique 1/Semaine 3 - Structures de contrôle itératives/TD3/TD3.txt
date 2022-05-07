@@ -1,0 +1,113 @@
+Algorithme ex4_a
+Var x, i, n : entier
+         ch : chaine de caracteres
+Debut
+Repeter 
+    Ecrire("Saisir une suite de caracteres se terminant par `*`")
+	Lire(ch)
+	x <- long(ch)
+Jusqu'a (ch[x] = '*')
+n <- 0
+Pour i allant de 1 a x faire
+    Si (ch[i]='A') alors
+	    n <- n + 1
+	Fin Si
+Fin Pour
+Ecrire("Le nombre d'apparition de la lettre `A` est ", x," fois")
+Fin
+-------------------------------------------------------------------------------
+Algorithme ex4_b
+-------------------------------------------------------------------------------
+Algorithme ex5_2.
+Var i, j, n : entier
+Debut
+Repeter
+    Ecrire("Veuillez saisir: ")
+	Lire(n)
+	Pour i allant de 1 a n faire
+	    Pour j allant de 1 a i faire
+		    Ecrire("*")
+		Fin Pour
+		Ecrire("\n")
+	Fin Pour
+Jusqu'a (n <= 0)
+Ecrire("Merci d'avoir utilisé ce programme")
+Fin
+--------------------------------------------------------------------------------
+Algorithme ex6_1.
+Var x, i, somme : entier
+Debut
+Ecrire("Entrez un nombre")
+Lire(x)
+Somme <- 0
+Pour i allant de 1 a x faire
+    Si (x%i=0) alors
+	    somme = somme + i
+	Fin Si
+Fin Pour
+Si (somme = x) alors
+Ecrire(x, " est un nombre parfaite")
+Sinon
+Ecrire(x, " n'est pas un nombre parfaite")
+Fin Si
+Fin
+----------------------------------------------------------------------------------
+Algorithme ex6_2.
+Var i, j, somme : entier
+Debut
+Pour i allant de 1 a 1000 faire 
+    Somme <- 0
+	Pour j allant de 1 a i faire
+    	Si (i%j=0) alors
+	    	somme = somme + j
+		Fin Si
+	Fin Pour
+Si (somme = i) alors
+Ecrire(i, " | ")
+Fin Si
+Fin Pour
+Fin
+----------------------------------------------------------------------------------
+Algorithme ex7_1.
+Var Max, i, x : entier
+Debut
+Max <- 0
+Pour i allant de 1 a 20 faire
+    Ecrire("Entrez le nombre numéro ", i, ":")
+	Lire(x)
+	Si (x>Max) alors
+	    Max <- x
+	Fin Si
+Fin Pour
+Ecrire("Le plus grand de ces nombres est: ", Max)
+Fin
+----------------------------------------------------------------------------------
+Algorithme ex7_2.
+Var Max, i, x, position : entier
+Debut
+Max <- 0
+Pour i allant de 1 a 20 faire
+    Ecrire("Entrez le nombre numéro ", i, ":")
+	Lire(x)
+	Si (x>Max) alors
+	    Max <- x
+		position <- i
+	Fin Si
+Fin Pour
+Ecrire("Le plus grand de ces nombres est: ", Max)
+Ecrire("C'était le nombre numéro ", position)
+Fin
+----------------------------------------------------------------------------------
+Algorithme ex8
+Var Max, x, i : entier
+Debut
+Max <- 0
+Repeter
+    Ecrire("Entrez un nombre: ")
+	Lire(x)
+	Si (x>Max) alors
+	    Max <- x
+	Fin Si
+jusqu'a (x = 0)
+Ecrire("Le plus grand de ces nombres est: ", Max)
+Fin
