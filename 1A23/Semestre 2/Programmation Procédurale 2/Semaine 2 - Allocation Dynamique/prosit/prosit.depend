@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1643928792 source:c:\users\hafeu\desktop\prosit\fonctions.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<sys/stat.h>
+	"fonctions.h"
+
+1643928792 c:\users\hafeu\desktop\prosit\fonctions.h
+
+1643928792 source:c:\users\hafeu\desktop\prosit\main.c
+	"fonctions.h"
+
+1644005336 source:c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 2 - allocation dynamique\prosit\fonctions.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"fonctions.h"
+
+1644005314 c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 2 - allocation dynamique\prosit\fonctions.h
+
+1644005314 source:c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 2 - allocation dynamique\prosit\main.c
+	"fonctions.h"
+

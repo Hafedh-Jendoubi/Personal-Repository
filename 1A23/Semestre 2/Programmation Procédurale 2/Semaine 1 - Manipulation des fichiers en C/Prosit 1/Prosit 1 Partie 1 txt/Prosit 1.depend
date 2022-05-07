@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1643222497 source:c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 1 - manipulation des fichiers en c\prosit 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fonctions.h"
+
+1643222497 c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 1 - manipulation des fichiers en c\prosit 1\fonctions.h
+
+1643218696 source:c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 1 - manipulation des fichiers en c\prosit 1\fonctions.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"fonctions.h"
+
+1643581059 source:c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 1 - manipulation des fichiers en c\prosit 1\prosit 1 partie 1 txt\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fonctions.h"
+
+1643581059 c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 1 - manipulation des fichiers en c\prosit 1\prosit 1 partie 1 txt\fonctions.h
+
+1643581138 source:c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 1 - manipulation des fichiers en c\prosit 1\prosit 1 partie 1 txt\fonctions.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"fonctions.h"
+

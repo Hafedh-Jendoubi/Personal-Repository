@@ -1,0 +1,14 @@
+void main()
+{
+    t_complex Tab[3] = {{2,3},{6,5},{3,0}}
+    File *P;
+
+    P = fopen(complex.bin, "wb");   // "complex.bin" fichier qu'on a nommé //
+    if(P != Null){
+        fwrite(Tab, sizeof(t_complex), 1, P);    |
+        fwrite(Tab+1, sizeof(t_complex), 1, P);  | =>  fwrite(Tab, sizeof(t_complex), 3, P)
+        fwrite(Tab+2, sizeof(t_complex), 1, P);  |
+        fclose(P);
+    }else
+        printf("Impossible");
+}

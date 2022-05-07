@@ -1,0 +1,316 @@
+Exercice n1:
+
+Algortihme Etudiant
+Type 
+  Etudiant = Enregistrement
+    nom, prenom: Chaine[20]
+    age, CIN, tel: Entier
+    adresse: Chaine[30]
+  Fin Enregistrement
+
+  Tab = Tableau [1..40] de Etudiant
+
+Var i, N, CIN_Donne, k: Entier
+    T: Tab
+    Trouve: Booleen
+
+Début
+  Ecrire("Taper le nombre d'eleves: ")
+  Lire(N)
+  Pour i allant de 1 à N faire
+    Ecrire("Taper le nom de l'étudiant n", i, ": ")
+    Lire(T[i].nom)
+    Ecrire("Taper le prenom de l'étudiant n", i, ": ")
+    Lire(T[i].prenom)
+    Ecrire("Taper l'age de l'étudiant n", i, ": ")
+    Lire(T[i].age)
+    Ecrire("Taper le CIN de l'étudiant n", i, ": ")
+    Lire(T[i].CIN)
+    Ecrire("Taper le telephone de l'étudiant n", i, ": ")
+    Lire(T[i].tel)
+    Ecrire("Taper l'adresse de l'étudiant n", i, ": ")
+    Lire(T[i].adresse)
+  Fin Pour
+  Ecrire("Taper le CIN de l'étudiant que vous êtes en train de chercher: )
+  Lire(CIN_Donne)
+  Trouve <- Faux, k <- 1
+  Tant que ((Trouve=Faux) et (k<N)) faire
+    Si (T[k].cin=CIN_Donne) alors
+      Trouve <- Vrai
+      Ecrire("Etudiant trouvé: ")
+      Ecrire("Nom: ", T[k].nom)
+      Ecrire("Prenom: ", T[k].prenom)
+      Ecrire("Adresse: ", T[k].adresse)
+    Sinon
+      k <- k + 1
+    Fin Si
+  Fin Tant que
+  Si (Trouve=Faux) alors
+    Ecrire("Verifier le CIN donnée!")
+  Fin Si
+Fin
+
+---------------------------------------------------------
+
+Exercice n2:
+
+Algorithme Banque
+Type
+  Date = Enregistrement
+    J, M, A: Entier
+  Fin Enregistrement
+
+  Transact = Enregistrement
+    D_Trans: Date
+    T_Trans: Chaine[30]
+  Fin Enregistrement
+
+  Tab = tableau [1..100] de Transact
+
+  Client = Enregistrement
+    Nom_C, Prenom_C: Chaine[20]
+    Num_C: entier
+    Solde: Reel
+    D_C: Date
+    Nb_Trans: entier
+    Historique: Tab
+  Fin Enregistrement
+
+  Banque = Tableau[1..200] de Client
+
+Var
+  T: Banque
+  i, NC: Entier
+
+Début
+  Repeter
+    Lire(NC)
+  Jusqu'a (NC>0 et NC<=200)
+  Pour i de 1 a NC faire
+    Lire(T[i].Nom_C, T[i].Prenom_C, T[i].Num_C, T[i].Solde, T[i].D_C.J, T[i].D_C.M, T[i].D_C.A)
+    Lire(T[i].NT)
+    Lire(T[i].H[1].T_Trans)
+    Lire(T[i].H[1].D_Trans.J, T[i].H[1].D_Trans.M, T[i].H[1].D_Trans.A)
+    Pour j de 2 a T[i].NT faire
+      Lire(T[i].H[j].T_Trans)
+      Repeter
+        Lire(T[i].H[j].D_Trans.J, T[i].H[j].D_Trans.M, T[i].H[j].D_Trans.A)
+        Si (T[i].H[j].D_Trans.A > T[i].H[j-1].D_Trans.A) alors
+          Ord <- Vrai
+       Sinon Si (T[i].H[j].D_Trans.A = T[i].H[j-1].D_Trans.A) alors
+         Si(T[i].H[j].D_Trans.M > T[i].H[j-1].D_Trans.M) alors
+            ord <- Vrai
+          Sinon Si (T[i].H[j].D_Trans.J = T[i].H[j-1].D_Trans.J) alors
+            ord <- Vrai
+          Fin Si
+         Fin Si
+        Fin Si
+       Fin Si
+      Fin Si
+     Jusqu'a (ord = vrai)
+    Fin Pour
+   Fin Pour
+  s <- 0
+  Pour i de 1 à N faire
+    S <- S + T[i].Solde
+  Fin Pour
+  Ecrire("Le totale est: ", S)
+  Pour i de 1 à N faire 
+    Ecrire(T[i].Nom_c, T[i].prenom_c, T[i].Solde...)
+    Pour j de 1 à (T[i].NT) faire
+      Ecrire(T[i].H[j].Dt.A, T[i].H[j].Dt.M, T[i].H[j].Dt.J)
+      Ecrire(T[i].H[j].T.trans)
+    Fin Pour
+  Fin Pour
+Fin
+
+-----------------------------------------------------------
+
+Exercice n3:
+
+Algorithme Rugby
+Constante n = 15
+
+Type
+  Joueur = Enregistrement
+    num, role: Entier
+    nom, prenom: Chaine[20]
+    date_naissance: Chaine[30]
+    poids: Reel
+  Fin Enregistrement
+
+  Tab = Tableau [1..n] de Joueur
+
+Var i, n_d, k, temp, permut: Entier
+    lourd: reel
+    T: Tab
+    Trouve: Booleen
+
+Début
+  Pour i allant de 1 à n faire
+    Ecrire("Numero: ")
+    Lire(T[i].num)
+    Ecrire("Nom: ")
+    Lire(T[i].nom)
+    Ecrire("Prenom: ")
+    Lire(T[i].prenom)
+    Ecrire("Date de naissance: ")
+    Lire(T[i].date_naissance)
+    Ecrire("Poids: ")
+    Lire(T[i].poids)
+    Ecrire("Rôle: ")
+    Lire(T[i].role)
+  Fin Pour
+  Ecrire("Taper le numero du jouer: ")
+  Lire(n_d)
+  Trouve <- Faux, k <- 1
+  Tant que ((Trouve=Faux) et (k<n)) faire
+    Si (T[k].num=n_d) alors
+      Trouve <- Vrai
+      Ecrire("Joueur trouvé: ")
+      Ecrire("Numero: ", T[k].num)
+      Ecrire("Nom: ", T[k].nom)
+      Ecrire("Prenom: ", T[k].prenom)
+      Ecrire("Date de Naissance: ", T[k].date_naissance)
+      Ecrire("Poids: ", T[k].poids)
+      Ecrire("Rôle: ", T[k].role)
+    Sinon
+      k <- k + 1
+    Fin Si
+  Fin Tant que
+  Si (Trouve=Faux) alors
+    Ecrire("Verifier le numero donnée!")
+  Fin Si
+  lourd <- T[1].poids
+  Pour i allant de 2 à n faire
+    Si (T[i].poids > lourd) alors
+      lourd <- T[i].poids
+      k <- i
+    Fin Si
+  Fin Pour
+  Ecrire("Le joueur le plus lourd est:", T[k].nom, T[k].prenom)
+  Repeter
+    permut <- 0
+    Pour i allant de 1 à (n-1) faire
+      Si (T[i].num>T[i+1].num) alors
+        permut <- 1
+        temp <- T[i].num
+        T[i].num <- T[i+1].num
+        T[i+1].num <- temp
+        .
+        . /*De même pour le nom, prenom, role etc..*/
+        .
+      Fin Si
+    Fin Pour
+  Jusqu'à (permut=0)
+Fin
+
+-----------------------------------------------------------
+
+Exercice n4:
+
+/* Deja fait en classe */
+
+-----------------------------------------------------------
+
+Exercice n5:
+
+Algorithme ParcAuto
+Type
+  Smart = Enregistrement
+    nt_cap, ncamera, nlidars: Entier
+  Fin Enregistrement
+
+  Nonsmart = Enregistrement
+    km: reel
+  Fin Enregistrement
+  
+  Vehicule = Enregistrement
+    matricule, marque, modele, couleur: Chaine[20]      
+    places, puissance, age, etat, sma, nsma: Entier
+    s: Smart
+    ns: Nonsmart
+  Fin Enregistrement
+
+  Tab = Tableau [1..50] de Vehicule
+
+Var i, n, k, cmax, agemoy: Entier
+    T: Tab
+    cdonnee: Chaine[20]
+
+Début
+  Repeter
+    Ecrire("Taper le nombre de vehicules: ")
+    Lire(n)
+  Jusqu'à ((n>0) et (n<=50))
+  Pour i de 1 à n faire
+    Ecrire("Matricule du voiture n", i, ": ")
+    Lire(T[i].matricule)
+    Ecrire("Marque du voiture n", i, ": ")
+    Lire(T[i].marque)
+    Ecrire("Modèle du voiture n", i, ": ")
+    Lire(T[i].modele)
+    Ecrire("Couleur du voiture n", i, ": ")
+    Lire(T[i].couleur)
+    Ecrire("Le nombre de places du voiture n", i, ": ")
+    Lire(T[i].places)
+    Ecrire("Puissance fiscale du voiture n", i, ": ")
+    Lire(T[i].puissance)
+    Ecrire("L'âge du voiture n", i, ": ")
+    Lire(T[i].age)
+    Repeter
+      Ecrire("L'état du voiture n", i, ": ([1] Smart - [2] Non smart) ")
+      Lire(T[i].etat)
+      Si (T[i].etat=1) alors
+        sma <- 1, nsma <- 0
+        Ecrire("Nombre totale de capteur: ")
+        Lire(T[i].s.nt_cap)
+        Ecrire("Nombre de Camera: ")
+        Lire(T[i].s.ncamera)
+        Ecrire("Nombre de lidars: ")
+        Lire(T[i].s.nlidars)
+      Sinon
+        sma <- 0, nsma <- 1
+        Ecrire("Le nombre de Kilomètre parcouru: ") 
+        Lire(T[i].ns.km)
+      Fin Si
+    Jusqu'à ((T[i].etat=1) ou (T[i].etat=2))
+  Fin Pour
+  Ecrire("Taper une couleur: ")
+  Lire(cdonnee)
+  Ecrire("Liste des véhicules de couleur ", cdonnee, " sont: ")
+  k <- 0
+  Pour i de 1 à n faire
+    Si (cdonnee=T[i].couleur) alors
+      k <- k + 1
+      Ecrire("Vehicule n°", k, ": ")
+      Ecrire("Matricule: ", T[i].matricule)
+      Ecrire("Marque: ", T[i].marque)
+      Ecrire("Modèle: ", T[i].modele)
+      Ecrire("Puissance: ", T[i].puissance)
+    Fin Si
+  Fin Pour
+  cmax <- 0
+  Pour i de 1 à n faire
+    Si (T[i].sma=1) alors
+      Si ((T[i].s.ncamera>=4) et (T[i].s.nlidars>=2)) alors
+        Si (T[i].s.nt_cap > cmax) alors
+          cmax <- T[i].s.nt_cap
+          k <- i
+        Fin Si
+      Fin Si
+    Fin Si
+  Fin Pour
+  Ecrire("Le véhicule smart est: ")
+  Ecrire("Matricule: ", T[k].matricule)
+  Ecrire("Marque: ", T[k].marque)
+  Ecrire("Modèle: ", T[k].modele)
+  Ecrire("Puissance: ", T[k].puissance)
+  agemoy <- 0
+  Pour i de 1 à n faire
+    agemoy <- agemoy + T[i].age
+  Fin pour
+  agemoy <- agemoy DIV n
+  Ecrire("L'âge moyen du parc auto des voiture est: ", agemoy)
+Fin
+

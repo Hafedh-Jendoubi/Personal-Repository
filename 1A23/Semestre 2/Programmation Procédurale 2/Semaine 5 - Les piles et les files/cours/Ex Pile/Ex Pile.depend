@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1645614749 source:c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 5 - les piles et les files\ex pile\functions.c
+	"functions.h"
+
+1645614670 c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 5 - les piles et les files\ex pile\functions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1645614776 source:c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 5 - les piles et les files\ex pile\main.c
+	"functions.h"
+

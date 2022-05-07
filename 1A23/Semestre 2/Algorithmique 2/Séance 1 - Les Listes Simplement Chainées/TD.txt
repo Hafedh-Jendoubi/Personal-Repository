@@ -1,0 +1,259 @@
+Exercice 1:
+
+1/ 
+Fonction Somme(L: LSC) : Entier
+    Var x: Entier
+        Parc: LSC
+    Debut
+
+	x <- 0, Parc <- L
+	Si(L<>Null)
+	    Tant que (Parc <> NULL) faire
+	        x <- x + Parc->val
+	        Parc <- Parc->suivant
+	    Fin Tant que
+	Fin Si
+
+        Somme <- x
+    Fin
+
+2/
+Fonction Min(L: LSC) : Entier
+    Var min: Entier
+	Parc: LSC
+    Debut
+
+	Parc <- L,
+	Si (Parc = NULL)
+	    min <- -1  /** Chaine Vide! **/
+	Sinon
+	    min <- Parc->val
+	    Tant que (Parc <> NULL) faire
+		Si (Parc->val < min) Alors
+		    min <- Parc->val
+		Fin Si
+		Parc <- Parc->suivant
+	    Fin Tant que
+	Fin Si
+
+	Min <- min
+    Fin
+
+3/
+Procédure DivPar3(L: LSC)
+    Var Parc: LSC
+    Debut
+
+	Parc <- L
+	Tant que (Parc <> NULL) faire
+	    Si (Parc->val MOD 3 = 0) alors
+		Ecrire(Parc->val, " | ")
+	    Fin Si
+	    Parc <- Parc->suivant
+	Fin Tant que
+
+    Fin
+
+4/
+Fonction ValImpair(L: LSC) : Entier
+    Var Parc: LSC
+	x: Entier
+    Debut
+
+	Parc <- L, x <- 0
+	Tant que (Parc <> NULL) faire
+	    Si (Parc->val MOD 2 <> 0) Alors
+		x <- x + 1
+	    Fin Si
+	    Parc <- Parc->suivant
+	Fin Tant que
+
+	ValImpair <- x
+    Fin
+
+5/
+Fonction Occurence(L: LSC, x: Entier) : Entier
+    Var Parc: LSC
+	n: Entier
+    Debut
+
+	n <- 0, Parc <- L
+	Tant que (Parc <> Null) faire
+	    Si (Parc->val = x) Alors
+		n <- n + 1
+	    Fin Si
+	    Parc <- Parc->suivant
+	Fin Tant que
+
+	Occurence <- n
+    Fin
+
+------------------------------------------------------------------------
+
+Exercice 2:
+
+1/a]
+Fonction NouveauEtudiant(E: etudiant) : LS
+    Var nouveau: LS
+    Debut
+
+	nouveau <- allouer(taille(etudiant))
+	Si (nouv = NULL) alors
+	    Ecrire("Erreur")
+	Sinon
+	    nouveau->e <- E
+	Fin Si
+
+	NouveauEtudiant <- nouveau
+    Fin
+
+b]
+Fonction InsereTeteEtudiant(L, nouveau: LS) : LS
+    Var Parc: LS
+    Debut
+
+	Si (L = NULL) Alors
+	    L <- nouveau
+	Sinon	
+	    Parc <- L
+	    L <- nouveau
+	    nouveau->suivant <- Parc
+	Fin Si
+
+	InsereTeteEtudiant <- L
+    Fin
+
+2/
+Algorithme Ex2
+
+Type
+    etudiant = Enregistrement
+	nom, prenom: char[20]
+	note: Reel
+    Fin Enregistrement
+
+    "L'autre types Deja dans L'ennoncé et supposons que T existe deja"
+
+Var
+    i: Entier
+    E: etudiant
+    L, nouveau: LS
+
+Debut
+    Pour i de 1 à 5 faire
+	E.nom <- T[i].nom
+	E.prenom <- T[i].prenom
+	E.note <- T[i].note
+	nouveau <- NouveauEtudiant(E)
+	L <- InsereTeteEtudiant(L, nouveau)
+    Fin Pour
+Fin
+
+------------------------------------------------------------------------
+
+Exercice 3:
+
+1/
+Procédure Insertion(L: LSC, x: Entier)
+    Var Parc, preced, nouv: LSC
+    Debut
+
+	nouv <- allouer(taille(Entier))
+	nouv->val <- x
+	nouv->suivant <- NULL
+
+	Si(L <> NULL)
+	    Parc <- L
+	    Tant que ((x < Parc->val) ou (Parc <> NULL))  Faire
+		preced <- Parc
+		Parc <- Parc->suivant
+	    Fin Tant que
+	    Si (Parc = NULL) Alors /** Cas x sup à tous les valeurs **/
+		preced->suivant <- nouv
+	    Sinon
+		nouv->suivant <- Parc
+		preced->suivant <- nouv
+	    Fin Si
+	Fin Si
+
+    Fin
+
+2/
+Fonction Fusion(L1, L2: LSC) : LSC
+    Var parc: LSC
+    Debut
+
+	parc <- L1
+	Tant que (parc <> NULL) faire
+	    parc <- parc->suivant
+	Fin Tant que
+	parc->suivant <- L2
+
+	Fusion <- L1
+    Fin
+
+3/
+     :D :D
+
+------------------------------------------------------------------------
+
+Exercice 4:
+
+1/
+Fonction VerifierVal(L: LSC, x: Entier) : Entier
+    Var pos, k: Entier
+	parc: LSC
+    Debut
+
+	parc <- L, pos <- -1, k <- 0
+	Tant que ((parc <> NULL) et (pos = -1)) faire
+	    Si (parc->val = x) Alors
+		pos <- k
+	    Sinon
+		parc <- parc->suivant
+		k <- k + 1
+	    Fin Si
+	Fin Tant que
+
+	VerifierVal <- pos
+    Fin
+
+2/
+Procédure SupprimerDerOcc(L: LSC, x: Entier)
+    Var Parc, preced, der: LSC
+    Debut
+
+	Parc <- L
+	Tant que (Parc <> NULL) Faire
+	    Si (Parc->val = x) Alors
+		der <- preced
+	    Fin Si
+	    preced <- Parc
+	    Parc <- Parc->suivant
+	Fin Tant que
+	der->suivant <- der->suivant->suivant
+
+    Fin
+
+3/
+Procédure SupprimerTousOcc(L: LSC, x: Entier)
+    Var Parc, preced: LSC
+    Debut
+
+	Parc <- L
+	Tant que (Parc <> NULL) Faire
+	    Si (Parc->val = x) Alors
+		preced <- preced->suivant
+	    Fin Si
+	    preced <- Parc
+	    Parc <- Parc->suivant
+	Fin Tant que
+
+    Fin
+************* A reviser Ex4 3/ *************
+
+Exercice 5:
+	Fait en Pascal et verifié qu'il fonctionne proprement
+
+
+#Jendoubi Hafedh

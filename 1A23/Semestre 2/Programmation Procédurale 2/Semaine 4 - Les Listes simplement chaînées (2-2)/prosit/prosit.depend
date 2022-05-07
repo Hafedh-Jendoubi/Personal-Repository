@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1644960411 source:c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 3 - les listes simplement chaînées (1-2)\prosit\main.c
+	<stdio.h>
+	<stdlib.h>
+	"fonctions.h"
+
+1644960099 c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 3 - les listes simplement chaînées (1-2)\prosit\fonctions.h
+
+1644953657 source:c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 3 - les listes simplement chaînées (1-2)\prosit\fonctions.c
+	<stdlib.h>
+	<stdio.h>
+	"fonctions.h"
+

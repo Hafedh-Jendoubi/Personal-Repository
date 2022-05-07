@@ -1,0 +1,39 @@
+Algorithme Ex2
+Type
+  Tab = tableau [1..5] de Entier
+  Etudiant = Enregistrement
+    nom : char[15]
+    prenom : char[15]
+    note : Tab
+  Fin Enregistrement
+Var
+  E1, E2 : Etudiant
+  i, j : entier
+  moy1, moy2 : reel
+Debut
+  Pour i allant de 1 a 2 faire
+    Ecrire("Taper le nom de l'eleve n°", i, ": ")
+    Lire(E[i].nom)
+    Ecrire("Taper le prenom de l'eleve n°", i, ": ")
+    Lire(E[i].prenom)
+    Pour j allant de 1 à 5 faire
+      Ecrire("Remplissez note n°", j, ": ")
+      Lire(E[i].note[j])
+    Fin Pour
+  Fin Pour
+  moy1 <- 0, moy2 <- 0
+  Pour i allant de 1 a 5 faire
+    moy1 <- moy1 + E1.note[i]
+    moy2 <- moy2 + E2.note[i]
+  Fin Pour
+  moy1 <- moy1 / 5
+  moy2 <- moy2 / 5
+  Si (Moy1 > Moy2) alors
+    Ecrire (E1.nom, ‘a la moyenne la plus elevée’)
+  Sinon Si (Moy1<Moy2) alors
+    Ecrire (E2.nom, ‘a la moyenne la plus elevée’)
+  Sinon
+    Ecrire (‘les deux etudiants ont la même moyenne)
+  Fin Si
+  Fin Si
+Fin

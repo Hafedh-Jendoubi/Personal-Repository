@@ -1,0 +1,413 @@
+Exercice 1:
+
+1/
+Fonction estVide(L: LD): Booleen
+    Debut
+	Si (L.tete = NULL et L.queue = NULL) Alors
+	    estVide <- Vrai
+	Sinon
+	    estVide <- Faux
+    Fin
+
+2/
+Fonction premier(L: LD): LS
+    Debut
+	premier <- L.tete
+    Fin
+
+3/
+1er Methode:
+
+    Fonction dernier(L: LD): LS
+	Debut
+	    dernier <- L.queue
+	Fin
+
+2eme Methode:
+
+    Fonction dernier(L: LD): LS
+	Var courant: LS
+	Debut
+	    Si (estVide(L) = Vrai) Alors
+		courant <- NULL
+	    Sinon
+		courant <- L.tete
+		Tant que (courant->suivant <> NULL) Faire
+		    courant <- courant->suivant
+		Fin Tq
+	    Fin Si
+	    dernier <- courant
+	Fin
+
+4/
+Procédure ajouterAprès(P, Q: LS, L: LD)
+    Var courant: LS
+    Debut
+	Si (estVide(L) = Vrai) Alors
+	    Ecrire("Liste est vide!")
+	Sinon
+	    courant <- L.tete
+	    Tant que ((courant <> Q) et (courant <> NULL)) Faire
+		courant <- courant->suivant
+	    Fin Tq
+	    Si (courant = NULL) Alors
+		Ecrire(Q, "N'existe pas!")
+	    Sinon
+		P->precedent <- courant
+		P->suivant <- courant->suivant
+		courant->suivant->precedent <- P
+		courant->suivant <- P
+	    Fin Si
+    Fin
+
+--------------------------------------------------------------------------
+
+Exercice 2:
+
+1/
+Type
+    cellule = Enregistrement
+	val: Reel
+	suiv: *cellule
+	prec: *cellule
+    Fin Enregistrement
+
+    LD = Enregistrement
+	tete: *cellule
+	queu: *cellule
+    Fin Enregistrement
+
+Var
+    a, b: LD
+
+2/
+Fonctions concatene_liste(a, b: LD) : LD
+    Var parc: *cellule
+    Debut
+	parc <- a.tete
+	Si (a.tete = NULL) Alors
+	    Ecrire("Impossible")
+	Sinon
+	    Tant que (parc <> NULL) Faire
+		b <- ajout_queue(b, parc->val)
+		parc <- parc->suiv
+	    Fin Tq
+	Fin Si
+	concatene_liste <- b
+    Fin
+
+3/
+Fonction inverse_liste(a: LD) : LD
+    Var forward, back: *cellule
+	x: Reel
+    Debut
+	Si (a.tete = NULL) Alors
+	    Ecrire("Impossible")
+	Sinon
+	    Tant que((forward <> back) && (forward->prec <> back)) Faire
+		x <- forward->val
+		forward->val <- back->val
+		back->val <- x
+		forward <- forward->suiv
+		back <- back->prec
+	    Fin Tq
+	Fin Si
+	inverse_liste <- a
+    Fin
+
+4/
+Fonction fusionne_liste(a, b: LD) : LD
+    Var
+    Debut
+
+	(** C'est pas bon **)
+
+	fusionne_liste <- a
+    Fin
+
+--------------------------------------------------------------------------
+
+Exercice 3:
+
+1/
+Type
+    etudiant = Enregistrement
+	moy: Reel
+    Fin Enregistrement
+
+    cellule = Enregistrement
+	e: etudiant
+	suiv: *cellule
+	prec: *cellule
+    Fin Enregistrement
+
+    LD = Enregistrement
+	tete: *cellule
+	queu: *cellule
+    Fin Enregistrement
+
+Var
+    l: LD
+
+2/
+Procédure insere_etudiant(l: *LD, e: etudiant)
+    Var nouv, parc: *cellule
+    Debut
+	parc <- l->tete
+	Tant que ((parc->suiv <> NULL) et (e.moy>parc->e.moy))
+	    parc <- parc->suiv
+	Fin Tq
+	Si (parc = l->tete) Alors
+	    *l = ajout_tete(*l, e->moy)
+	Sinon Si (parc = l->queu) Alors
+	    *l = ajout_queue(*l, e->moy)
+	Sinon
+	    nouv <- allouer(taille(cellule))
+	    Si (nouv = NULL) Alors
+		Ecrire("Probleme du memoire!")
+	    Sinon
+		nouv->e.moy <- e->moy
+		nouv->suiv <- parc
+		nouv->prec <- parc->prec
+		parc->prec->suiv <- nouv
+		parc->prec <- nouv
+	    Fin Si
+	Fin Si
+    Fin
+
+
+3/
+Procédure afficher_inverse(l: LD)
+    Var parc: *cellule
+    Debut
+	Si (l.queu = NULL) Alors
+	    Ecrire("Liste vide")
+	Sinon
+	    parc <- l.queu
+	    Tant que (parc <> NULL) Faire
+		Ecrire(parc->e.moy)
+		parc <- parc->prec
+	    Fin Tq
+    Fin
+
+4/
+Procédure afficher_sup10(l: LD)
+    Var parc: *cellule
+    Debut
+	Si (l.tete = NULL) Alors
+	    Ecrire("Liste Vide")
+	Sinon
+	    parc <- l.tete
+	    Tant que (parc <> NULL) Faire
+		Si (parc->e.moy >= 10) Alors
+		    Ecrire(parc->e.moy)
+		Fin Si
+		parc <- parc->suiv
+	    Fin Tq
+	Fin Si
+    Fin
+
+--------------------------------------------------------------------------
+
+Exercice 4:
+
+Procédure Echange_elements(l: LD, p, q: Entier)
+    Var parc1, parc2: *cellule
+	k, x: Entier
+    Debut
+	parc1 <- l.tete
+	k <- 1
+	Tant que ((parc1 <> NULL) et (k <> p)) Faire
+	    k <- k + 1
+	    parc1 <- parc1->suiv
+	Fin Tq
+	Si (parc1 = NULL) Alors
+	    Ecrire("Il y'a pas de ", p, " cellules!")
+	Sinon
+	    x <- parc1->val
+	    parc2 <- l.tete
+	    k <- 1
+	    Tant que ((parc2 <> NULL) et (k <> q)) Faire
+		k <- k + 1
+		parc2 <- parc2->suiv
+	    Fin Tq
+	    Si (parc2 = NULL) Alors
+		Ecrire("Il y'a pas de ", q, " cellules!")
+	    Sinon
+		parc1->val <- parc2->val
+		parc2->val <- x
+		Ecrire("Echange est terminé avec succes!")
+	    Fin Si
+	Fin Si
+    Fin
+
+--------------------------------------------------------------------------
+
+Exercice 5:
+
+Algorithme ex5
+
+1/
+Type
+    Episode = Enregistrement
+	nom: char[20]
+	serie: char[20]
+	theme: char[20]
+    Fin Enregistrement
+
+    cellule = Enregistrement
+	Episode: ep
+	suiv: *cellule
+	prec: *cellule
+    Fin Enregistrement
+
+    LD = Enregistrement
+	tete: *cellule
+	queu: *cellule
+    Fin Enregistrement
+
+Var
+    ch: Entier
+    l: LD
+    e: Episode
+    c: Char
+
+	(** Fonctions & Procédures **)
+
+Procédure menu(ch: *Entier)
+    Debut
+	Si (*ch = -1) Alors
+	    Ecrire("~~~~~~~~ Menu: ~~~~~~~~")
+	    Ecrire("1- Afficher Playlist")
+	    Ecrire("2- Ajouter Episode au Playlist")
+	    Ecrire("3- Afficher le nombre des themes dans votre Playlist")
+	    Ecrire("0- Exit")
+	Fin Si
+	Repeter
+	    Ecrire("Taper votre choix: ")
+	    Lire(*ch)
+	Jusqu'a ((*ch=>0) ou (*ch<=3))
+    Fin
+
+Procédure afficher_playlist(l: LD)
+    Var parc: *cellule
+    Debut
+	Si (l.tete = NULL) Alors
+	    Ecrire("Playlist vide")
+	Sinon
+	    Tant que (parc <> NULL) Faire
+		Ecrire("Episode: ", parc->e.nom)
+		parc <- parc->suiv
+	    Fin Tq
+	Fin si
+    Fin
+
+2/
+Procédure saisirEpisode(e: *Episode)
+    Debut    
+	Lire(e->nom)
+	Lire(e->serie)
+	Lire(e->theme)
+    Fin
+
+3/
+Procédure AjoutEpisode(l: *LD, e: Episode)
+    Var nouv: *cellule
+    Debut
+	nouv <- allouer(taille(cellule))
+	Si (nouv = NULL) Alors
+	    Ecrire("Impossible")
+	Sinon
+	    nouv->e <- e
+	    nouv->suiv <- l->tete
+	    nouv->prec <- NULL
+	    Si (Vide_LD(*l) = Vrai) Alors  (** Vide_LD() dans le cours **)
+		l->queu <- nouv
+	    Sinon
+		l->tete->prec <- nouv
+	    Fin Si
+	    l->tete <- nouv
+	    Ecrire("Episode ", e.nom, " ajoute avec succes!")
+	Fin Si
+    Fin
+
+4/
+Procédure afficherEpisode(e: Episode)
+    Debut
+	Ecrire("Nom de l'Episode: ", e.nom)
+	Ecrire("Theme de l'Episode: ", e.theme)
+	Ecrire("Serie de l'Episode: ", e.serie)
+    Fin
+
+5/
+Fonction Serie_episode(l: LD, s: char) : Entier
+    Var parc: *cellule
+	k: Entier
+    Debut
+	parc <- l.tete
+	k <- 0
+	Tant que (parc <> NULL) Faire
+	    Si (s = parc->e.serie) Alors
+		k <- k + 1
+	    Fin Si
+	    parc <- parc->suiv
+	Fin Tq
+	Serie_episode <- k
+    Fin
+
+6/
+Fonction Theme_episode(l: LD) : Entier
+    Var parc: *cellule
+	k, i, trv: Entier
+	t: Tableau [1..20, 1..20] de Char
+    Debut
+	parc <- l.tete
+	t[1] <- parc->e.theme
+	k <- 1
+	parc <- parc->suiv
+	Tant que (parc <> NULL) Faire
+	    trv <- 0
+	    Pour i de 1 a k faire
+		Si (parc->e.theme = t[i]) Alors
+		    trv <- 1
+		Fin Si
+	    Fin Pour
+	    Si (trv = 0)
+		t[k] <- parc->e.theme
+		k <- k + 1
+	    Fin Si
+	    parc <- parc->suiv
+	Fin Tq
+	Theme_episode <- k
+    Fin
+
+7/
+	(** Algorithme Principale **)
+Debut
+    ch <- -1
+    l <- INITIALISATION_LD(l) (** INITIALISATION_LD() dans le cours! **)
+    Repter
+	menu(&ch)
+	Selon (ch) faire
+	    Cas 0:
+		Ecrire("...")
+
+	    Cas 1:
+		afficher_playlist(l)
+
+	  a/
+	    Cas 2:
+		Repeter
+		    Ecrire("Arreter l'ajout en tapant sur 'N' ")
+		    Si ((c<>'n') et (c<>'N')) Alors
+			saisirEpisode(&e)
+			AjoutEpisode(&l, e)
+		    Fin Si
+		Jusqu'a ((c='n') et (c='N'))
+
+	  c/
+	    Cas 3:
+		Ecrire(Theme_episode(l))
+	Fin Selon
+    Jusqu'a(ch = 0)
+Fin

@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1637430237 source:c:\users\hafeu\desktop\app10\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1637430237 source:c:\users\hafeu\desktop\1a23\programmation procédurale 1\semaine 10 - les fonctions (1-2)\app10\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

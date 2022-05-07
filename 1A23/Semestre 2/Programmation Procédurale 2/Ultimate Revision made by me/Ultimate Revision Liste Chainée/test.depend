@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1645915714 source:c:\users\hafeu\desktop\test\functions.c
+	"functions.h"
+
+1645915349 c:\users\hafeu\desktop\test\functions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+
+1645913538 source:c:\users\hafeu\desktop\test\main.c
+	"functions.h"
+	"menu.h"
+
+1645915754 source:c:\users\hafeu\desktop\test\menu.c
+	"menu.h"
+
+1645912603 c:\users\hafeu\desktop\test\menu.h
+	"functions.h"
+

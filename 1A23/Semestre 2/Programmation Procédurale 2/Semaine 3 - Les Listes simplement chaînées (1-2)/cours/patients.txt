@@ -1,0 +1,10 @@
+Patient n1:
+	Nom: Jendoubi
+	Prenom: Hafedh
+	Rendez-vous: 1 ([0] Non - [1] Oui)
+
+Patient n2:
+	Nom: Jendoubi
+	Prenom: Majdi
+	Rendez-vous: 0 ([0] Non - [1] Oui)
+

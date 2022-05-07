@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1633342830 source:c:\users\hafeu\desktop\ex3\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1634232655 source:c:\users\hafeu\desktop\1a23\programmation procédurale 1\semaine 4 - les structures itératives\exercices de cours\ex3\main.c
+	<stdio.h>
+	<stdbool.h>
+

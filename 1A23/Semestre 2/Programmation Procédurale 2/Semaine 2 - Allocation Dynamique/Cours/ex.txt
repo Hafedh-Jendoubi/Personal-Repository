@@ -1,0 +1,46 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+typedef struct{
+   char nom[20];
+   char prenom[20];
+   int age;
+}personne;
+
+int main()
+{
+   int n, i, m;
+   personne *Tab;
+
+   printf("Taper le nombre du personne: "); scanf("%d", &n);
+   
+   Tab = (personne*) malloc(n*sizeof(personne));
+   if(Tab == NULL){
+      printf("Impossible!\n");
+   else{
+      //Remplissage du tableau
+      for(i=0; i<n; i++){
+         printf("Nom du personne n%d: ", i+1); scanf("%s", (Tab+i)->nom)
+         printf("Prenom du personne n%d: ", i+1); scanf("%s", (Tab+i)->prenom);
+         printf("L'Age du personne n%d: ", i+1); scanf("%d", &(Tab+i)->age);
+      }
+      //Affichage du tableau
+         ...
+   }
+
+   printf("Taper le nouveau taille: "); scanf("%d", &m);
+
+   Tab = realloc(Tab, (n+m)*sizeof(personne));
+   if(Tab == NULL){
+      	printf("Impossible!\n");
+   }else{
+      //Remplissage
+      for(i=n; i<n+m; i++){
+         printf("Nom du personne n%d: ", i+1); scanf("%s", Tab[i]->nom)
+         printf("Prenom du personne n%d: ", i+1); scanf("%s", Tab[i]->prenom);
+         printf("L'Age du personne n%d: ", i+1); scanf("%d", &Tab[i]->age);
+      }
+      //Affichage
+        ...
+   return 0;
+}

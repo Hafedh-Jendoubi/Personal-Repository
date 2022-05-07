@@ -1,0 +1,6 @@
+Locomotive 1 a ete ajoute au train!
+Wagon 2 a ete ajoute au train
+Wagon 3 a ete ajoute au train
+Tous les wagons en panne ont ete supprime avec succes!
+Wagon 4 a ete ajoute au train
+Wagon 3 a ete ajoute avec succes apres wagon n2

@@ -1,0 +1,138 @@
+Algorithme TD13
+(** Les types & variables **)
+
+Type
+  Stat_pays = Engregistrement
+    Pays: Char[20]
+    Region: char[30]
+    Pourcentage: Reel
+  Fin Engregistrement
+
+  Stat_Region = Enregistrement
+    Region: Char[30]
+    Pourcentage_moyen: Reel
+  Fin Enregistrement
+
+  Tab = Tableau [1..100] de Stat_Region
+
+Var
+  T1: *Stat_pays
+  T2: Tab
+  n, n2, i : Entier
+  Max: Reel
+
+(** Fonctions et Procedures **)
+
+Procédure Permut(a, b: *Stat_pays)
+  Var c: Stat_pays
+  Debut
+    c <- (*a)
+    (*a) <- (*b)
+    (*b) <- c
+  Fin
+
+Fonction RemplissageInternet(n: Entier) : *Stat_pays 
+  Var i: Entier
+      E: *Stat_pays
+  Debut
+    E <- allouer(n*type(Stat_pays))
+    Si (E=Null) alors
+      Ecrire("Espace insuffisante!")
+    Sinon
+      Pour i de 1 à n faire
+        Lire(E[i].Pays)
+        Lire(E[i].Region)
+        Lire(E[i].Pourcentage)
+      Fin Pour
+      RemplissageInternet <- E
+    Fin Si
+  Fin
+
+Fonction InternetMax(E: *Stat_pays, n: Entier) : Reel
+  Var Max: Reel
+        i: Entier
+  Debut
+    Max <- E[1].Pourcentage
+    Pour i de 2 à n faire
+      Si (E[i].Pourcentage>Max) Alors
+        Max <- E[i].Pourcentage
+      Fin Si
+    Fin Pour
+    InternetMax <- Max
+  Fin
+
+Procédure TriRegion(E: *Stat_pays, n: Entier)
+  Var i, j, min: Entier
+  Debut
+    Pour i de 1 à n-1 faire
+      min <- i
+      Pour j de i+1 à n faire
+        Si (E[j].Region < E[min].Region) faire
+          min <- j
+        Fin Si
+        Permut(&E[i], &E[min])
+      Fin Pour
+  Fin
+
+                                              5)b] T(n) = (n-1)*(1+[(n-i)*(1+1)]+3)
+                                                        = (n-1)*(1+2n-2i+3)
+                                                        = (n-1)*(2n-2i+4)
+                                                        = 2n²-2in+4n-2n+2i-4
+                                                        = 2n²-2n(i-1)-4
+
+Procédure Pourcentage(E: *Stat_pays, n: Entier, T2: Tab, n2: *Entier)
+  Var i, nb: Entier
+       temp: Stat_Region
+  Debut
+    TriRegion(&E, n)
+    temp.Region <- E[1].Region
+    temp.Pourcentage_moyen <- E[1].Pourcentage
+    (*n2) <- 1
+    nb <- 1
+    Pour i de 2 à n faire
+      Si (E[i].Region = temp.Region) Alors
+        temp.Pourcentage_moyen <- temp.Pourcentage_moyen + E[i].Region
+        nb <- nb + 1
+      Sinon
+        temp.Pourcentage_moyen <- temp.Pourcentage_moyen / nb
+        T2[(*n2)] <- temp
+        (*n2) <- (*n2) + 1
+        temp.Region <- E[i].Region
+        temp.Pourcentage_moyen <- E[i].Pourcentage
+        nb <- 1
+      Fin Si
+    Fin Pour
+    (*n2) <- (*n2) - 1
+  Fin
+
+Procédure Top5_internet(E: *Stat_pays, n: Entier)
+  Var i, j, max: Entier
+  Debut
+    Pour i de 1 à 5 faire
+      i <- max
+      Pour j de (i+1) à n faire
+        Si (E[j].Pourcentage > E[max].Pourcentage) faire
+          max <- j
+        Fin Si
+        Permut(&E[max], &E[j])
+        Ecrire(E[max].pays)
+  Fin
+
+(** Algorithme Principal **)
+
+Debut
+  Ecrire("Donner le nombre du pays de l'étude")
+  Lire(n) 
+  T1<-RemplissageInternet(n) 
+  Max ← InternetMax(T1, n)
+  Pour i allant de 1 à n faire
+    Si (T1[i].pourcentage = Max) Alors
+      Ecrire(T1[i].pays)
+    FinSi
+  FinPour
+  Pourcentage(T1,n,T2,n2)
+  Pour i allant de 1 à n2 faire
+   Ecrire(T2[i].region,T2[i].pourcentage_moyen)
+  FinPour
+  Top5 (T1, n)
+Fin

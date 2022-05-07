@@ -1,0 +1,11 @@
+<3/12 12:48:27> Number 1 has been succefully added
+<3/12 12:48:29> Number 3 has been succefully added
+<3/12 12:48:31> Number 5 has been succefully added
+<3/12 12:48:34> Number has been succefully deleted
+
+~~~~~~~~ Loading Data ~~~~~~~~
+<3/12 12:52:20> Number 1 has been succefully added
+<3/12 12:52:20> Number 3 has been succefully added
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<3/12 12:52:35> Number has been succefully deleted

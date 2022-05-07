@@ -1,0 +1,364 @@
+Exercice 1:
+
+Fonction Free_Pile(pile P): pile
+    Var parc, suppr: pile
+    Debut
+	parc <- P	
+	Tant que (parc <> NULL) Faire
+	    suppr <- parc
+	    parc <- parc->suivant
+	    liberer(suppr)
+	Fin tq
+	P <- NULL
+
+	Free_Pile <- P
+    Fin
+
+Fonction depiler_dansPile(pile P2, pile P): pile
+    Var parc, nouv: pile
+    Debut
+	parc <- P
+	Tant que (parc <> NULL) Faire
+	    nouv <- allouer(taille(Cellule))
+	    nouv->val <- parc->val
+	    nouv->suivant <- P2
+	    P2 <- nouv
+	    parc <- parc->suivant	    
+	Fin tq
+	P <- Free_Pile(P)
+
+	depiler_dansPile <- P2
+    Fin
+ 
+Fonction arrangement(pile P1, pile P2): pile
+    Var P3, P4, parc, nouv: pile
+    Debut
+	P3 <- NULL, P4 <- NULL, parc <- P1
+	Tant que(parc<>NULL) Faire
+	    nouv <- allouer(taille(Cellule))
+	    nouv->val <- parc->val
+	    Si (parc->val MOD 2 = 0) Alors
+		nouv->suivant <- P4            (** P4 contient les valeurs pairs **)
+		P4 <- nouv
+	    Sinon
+		nouv->suivant <- P3           (** P3 contient les valeurs impairs **)
+		P3 <- nouv
+	    Fin Si
+	    parc <- parc->suivant
+	Fin tq
+	(** Depilage de P4 premierement pour avoid les nombres pairs au dessous **)
+	P2 <- depiler_dansPile(P2, P4)
+	P2 <- depiler_dansPile(P2, P3)
+
+	arrangement <- P2 (** Donc on obitent P2 arrangé, d'aprés P1 **)
+    Fin
+
+---------------------------------------------------------------------------
+
+Exercice 2:
+
+Algorithme ex2
+Type
+    Cellule = Enregistrement
+	c: char
+	suivant: *Cellule
+    Fin Enregistrement
+
+    Pile: *Cellule
+
+Var mot: char[20]
+
+Procédure Empiler(c: char, P: Pile)
+    Var element: Pile
+    Début
+	element <- allouer(taille(Cellule))
+	element->c <- c
+	element->Suivant <- P
+	P <- element
+    Fin
+
+Procédure Dépiler(c: *char, P: Pile)
+    Var element: Pile
+    Début
+	Si (P <> NULL) Alors
+	    element <- P
+	    *c <- *element.c
+	    P <- *element.Suivant
+	    Libérer(element)
+	Sinon
+	    Ecrire("impossible, la pile est vide")
+	FinSi
+    Fin
+
+Procédure Mot_Palindrome(char mot[])
+    Var P1, P2, parc, courant, nouv: Pile
+	i, k: Entier
+	c1, c2: char
+    Debut
+	P1 <- NULL, P2 <- NULL, parc <- P1
+	Pour i de 1 a long(mot) faire
+	    Empiler(mot[i], P1)
+	Fin Pour
+
+	parc <- P2
+	Pour i de long(mot) a 1 faire
+	    Empiler(mot[i], P2)
+	Fin Pour
+
+	k <- 0
+	Tant que(c1 = c2) Faire
+	    k <- k + 1
+	    Dépiler(&c1, P1)
+	    Dépiler(&c2, P2)
+	Fin tq
+
+	Si (long(mot) = k) Alors
+	    Ecrire(mot, "est palindrome")
+	Sinon
+	    Ecrire(mot, "n'est pas palindrome")
+	Fin Si
+	
+    Fin
+
+Debut
+    Ecrire("Taper un mot: ")
+    Lire(mot)
+
+Fin
+
+---------------------------------------------------------------------------
+
+Exercice 3:
+
+1/
+(** Il a dit "Copier" signifie je ne vais pas utiliser Dépiler() car elle va "Déplacer" **)
+Fonction copier(P: Pile): File
+    Var parc: Pile
+	F: File
+    Debut
+	parc <- P
+	Init_File(F)
+	Tant que (parc <> NULL) Faire
+	    Enfiler(F, parc->val)
+	    parc <- parc->suivant
+	Fin Tq
+
+	copier <- F
+    Fin
+
+2/
+Procédure inverserPile(P: Pile)
+    Var P1, parc: Pile
+    Debut
+	parc <- P
+	Tant que (parc <> NULL) Faire
+	    Dépiler(&parc->val, P)
+	    Empiler(parc->val, P1)
+	    parc <- parc->suivant
+	Fint tq
+	P <- P1
+    Fin
+
+3/
+Procédure inverserFile(F: File)
+    Var F1, parc: File
+    Debut
+	Init_File(F1)
+	parc <- F.tete
+	tant que (parc <> NULL) faire
+	    Défiler(F, &parc->val)
+	    Enfiler(F1, parc->val)
+	    parc <- parc->suivant
+	Fin tq
+	F <- F1
+    Fin
+
+---------------------------------------------------------------------------
+
+Exercice 4:
+
+(** Facile **)
+
+---------------------------------------------------------------------------
+
+Exercice 5:
+
+Algorithme Ex5
+1/
+Type
+    cours = Enregistrement
+	nom: Char[15]
+	panier: Entier
+	coeff: Entier
+	revision: Booleen
+    Fin Enregistrement
+
+    Cellule = Enregistrement
+	c: cours
+	suivant: *Cellule
+    Fin Enregistrement
+
+    Pile: *Cellule
+
+Var P: Pile
+
+Fonction Saisir_Cours(): cours
+    Var c: cours
+    Debut
+	Lire(c.nom, c.panier, c.coeff, c.revision)
+	Saisir_Cours <- c
+    Fin
+
+2/
+Fonction Ajouter_Cours(P: Pile, c: cours): Pile
+    Var nouv: Pile
+    Debut
+	nouv <- allouer(taille(Cellule))
+	nouv->c <- c
+	nouv->suivant <- P
+	P <- nouv
+	Ecrire("Cours ajouté avec succés!")
+	Ajouter_Cours <- P
+    Fin
+
+3/
+Fonction Retirer_Cours(P: Pile, &c: cours): Pile
+    Var suppr: Pile
+    Debut
+	Si (P = NULL) Alors
+	    Ecrire("Il y'a pas du cours à retirer")
+	Sinon
+	    suppr <- P
+	    *c <- suppr->c
+	    P <- P->suivant
+	    Libérer(suppr)
+	    Ecrire("Cours retiré avec succés!")
+	Fin Si
+	Retirer_Cours <- P
+    Fin
+
+4/
+Fonction Consulter_Sommet(P: Pile): Pile
+    Debut
+	Si (P<>NULL) alors
+	    Consulter_Sommet <- P
+	Sinon
+	    Consulter_Sommet <- NULL
+	Fin Si
+    Fin
+
+5/
+Fonciton Pile_dans_Pile(P, Ps: Pile): Pile
+    Var parc: Pile
+    Debut
+	parc <- Ps
+	Tant que (parc <> NULL) Faire
+	    parc <- Ps
+	    Ps <- Retirer_Cours(parc, &parc->c)
+	    P <- Ajouter_Cours(P, parc->c
+	Fin Tq
+	Pile_dans_Pile <- P
+    Fin
+
+Fonction Arrangement(P: Pile): Pile
+    Var P0, P1, parc: Pile
+    Debut
+	parc <- P
+	Tant que (parc <> NULL) Faire
+	    parc <- P
+	    P <- Retirer_Cours(parc, &parc->c)
+	    Si (parc->c.revision = faux) Alors
+		P0 <- Ajouter_Cours(P0, parc->c)
+	    Sinon
+		P1 <- Ajouter_Cours(P1, parc->c) 
+	    Fin Si
+	Fin tq
+
+	P <- Pile_dans_Pile(P, P1)
+	P <- Pile_dans_Pile(P, P0)
+
+	Arrangement <- P
+    Fin
+
+6/
+  (** Non Merci **)
+
+Debut
+	(** Menu et appelle des fonctions **)
+Fin
+
+
+---------------------------------------------------------------------------
+
+Exercice 6:
+
+(** Deja fait en classe en Pascal **)
+
+---------------------------------------------------------------------------
+
+Exercice 7:
+
+Algorithme Ex7
+Type
+    citoyen = Enregistrement
+	cin: Entier
+	service: Entier
+    Fin Enregistrement
+
+    Cellule = Enregistrement
+	c: citoyen
+	suivant: *Cellule
+    Fin Enregistrement
+
+    File = Enregistrement
+	sommet: *Cellule
+	queue: *Cellule
+    Fin Enregistrement
+
+
+
+Var F: File
+
+1/
+Fonction Ajouter_Citoyen(F: File, c: citoyen): File
+    Var nouv: *Cellule
+    Debut
+	nouv <- allouer(taille(Cellule))
+	nouv->c <- c
+	nouv->suivant <- NULL
+	Si((F.tete = NULL) et (F.queue = NULL)) Alors
+	    F.tete <- nouv
+	Sinon
+	    F.queue->suivant <- nouv
+	Fin Si
+	F.queue <- nouv
+
+	Ajouter_Citoyen <- F
+    Fin
+
+2/
+Fonction Servir_Client(F: file, c: *citoyen): File
+    Var suppr: *Cellule
+    Debut
+	Si((F.tete = NULL) et (F.queue = NULL)) Alors
+	    Ecrire("Pas de citoyens!")
+	Sinon
+	    suppr <- F.tete
+	    F.tete <- F.tete->suivant
+	    *c <- suppr->c
+	    Si(F.tete->suivant = F.queue) Alors
+		F.queue <- NULL
+	    Fin Si
+	    Libérer(suppr)
+	Fin Si
+
+	Servir_Client <- F
+    Fin
+
+3/
+  (** Non Merci **)
+
+Debut
+    Init_File(F)
+    (** Etc..: Menu & Appelle des fonctions **)
+Fin

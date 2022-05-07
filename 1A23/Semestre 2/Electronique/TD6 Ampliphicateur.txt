@@ -1,0 +1,19 @@
+Figure 1.2: Regime Lineaire (Il y'a une boucle) et ampliphicateur inverseur (car ve(t) entre dans la signe - ) alors:
+Vs = -R2/R1 * Ve  = -2 * 1.5 = -3v
+
+Figure 1.3: Regime Lineaire (        //       ) et ampliphicateur non-inverseur (car ve(t) entre dans la signe + ) alors:
+Vs = (R1+R2)/R1 * Ve = (1k + 3k)/1k * 1.5v
+                     = 4k/1k * 1.5v = 4 * 1.5V = 6V
+
+Figure 1.4: Regime Sature (Car il y'a pas du boucle, V(sortie) ne retorune pas) alors:
+On a: V+ = 1.5V (Ve)
+   et V- = 0 (Masse)
+	pour T/2
+Alors: V+ > V- sig: Vs = +Vcc = 5V
+Et pour l'autre T 
+On a: V+ = -1.5V
+   et V- = 0V
+Alors: V+ < V- sig: Vs= -Vcc = -3.3V
+(Voir enregistrement sur Google Classroom)
+
+Figure 1.5: Regime Lineaire (    //    ) et

@@ -1,0 +1,144 @@
+Exercice 1:
+
+Algorithme ex1
+
+Procédure remplir(RES T[100]: Entier)
+  Var i : Entier
+  Début
+    Pour i de 1 à 100 faire
+      Ecrire("Remplissez T[",i,"]=")
+      Lire(T[i])
+    Fin Pour
+  Fin
+
+Fonction existe(T[100]: Entier, DON x: Entier): Entier
+  Var 
+  Début
+    Tant que ((i<=100) et (T[i]<>x)) faire
+      i <- i + 1
+    Fin Tant que
+    Si (i>100) alors
+      i <- 0
+    Fin Si
+    Existe <- i
+  Fin
+
+Procédure remplacer(DONRES T[100]: Entier, Val: Entier, NV: Entier)
+  Var pos: Entier
+  Début
+    pos <- existe(T, Val)
+    Si (pos <> 0) alors
+      T[pos] <- NV
+    Sinon
+      Ecrire("L'élement n'existe pas")
+    Fin Si
+  Fin
+
+
+---------------------------------------------------------------------------
+
+Exercice 4:
+
+Algorithme Ex4
+Type
+  Produit = Enregistrement
+    Code, Qt : Entier
+    pu : Reel
+    Etat : Booleen
+  Fin Enregistrement
+
+  Fournisseur = Enregistrement
+    nom : chaine[20]
+    Id : Entier
+    Ens : Tableau [1..10] de Produit
+  Fin Enregistrement
+
+  Tab : Tableau [1..100] de Fournisseur
+
+Var N: Entier                                         /* Variable Generale */
+
+Procédure AjoutFournisseur(DONRES T: Tab, DON n: Entier)
+  Var i: Entier
+  Début
+    Lire(T[n+1].nom)
+    Répéter
+      Lire(T[n+1].Id)
+    Jusqu'à (existe(T, n, T[n+1].Id)=0)               /* existe() du Ex1!! */
+    Pour i de 1 à 10 faire
+      T[n+1].Ens[i].Code <- 0
+    Fin Pour
+  Fin
+
+b] Fonction existe() du Ex 1
+
+Fonction SaisirProduit(T: Tab, n: Entier): Produit      /* Par défaut Don */
+  Var P: Produit
+      i, j: Entier
+      trouve: Booleen
+  Début
+    Répéter
+      Ecrire("Taper votre code: ")
+      Lire(P.Code)
+      trouve <- Faux
+      i <- 1
+      Tant que ((i<=n) et (trouve=Faux)) faire
+        j <- 1
+        Tant que ((j<=10) et (trouve=Faux)) faire
+          Si (T[i].Ens[j].Code=P.Code) alors
+            trouve <- Vrai
+          Fin Si
+          j <- j + 1
+        Fin Tant que
+        i <- i + 1
+      Fin Tant que
+    jusqu'à (trouve=Faux)
+    Lire(P.Qt)
+    Lire(P.pu)
+    Lire(P.Etat)   
+    SaisirProduit <- P
+  Fin
+
+Procédure Affecte(P.produit, Ident: Entier, DONRES T: Tab, DON n: Entier)
+  Var Pos, i: Entier
+  Début
+    Pos <- existe(T, n, ident)
+    Si (Pos=0) alors
+      Ecrire("Il n'existe pas un fournisseur avec cette ID")
+    Sinon
+      i <- 1
+      Tant que ((i<=10) et (T[pos].Ens[i].Code<>0)) faire
+        i <- i + 1
+      Fin Tant que
+      T[pos].Ens[i] <- P
+    Fin Si
+  Fin
+
+Fonction Facture(Ident: Entier, T: Tab, Don n: Entier): Reel
+  Var Pos: Entier
+       mt: Reel
+  Début
+    mt <- 0
+    Pos <- existe(T, n, ident)
+    Si (Pos=0) alors
+      Ecrire("Il n'existe pas un fournisseur avec cette ID")
+    Sinon
+      i <- 1
+      Tant que ((i<=10) et (T[Pos].Ens[i].Code<>0)) faire
+        Si (T[Pos].Ens[i].Etat=Vrai) Alors
+          mt <- mt + T[pos].Ens[i].Qt*T[pos].Ens[i].pu
+        Fin Si
+        i <- i + 1
+      Fin Tant que
+    Fin Si
+    Facture <- mt
+  Fin
+
+Début (/* Program Principal /*)
+  N <- 0
+  AjoutFournisseur(T, N)
+  Pour i de 1 à 5 faire
+    P <- SaisirProduit(T, N)
+    Affecter(P, T[1].id, T, N)
+  Fin Pour
+  M <- Facture(T[1].id, T, N)
+Fin

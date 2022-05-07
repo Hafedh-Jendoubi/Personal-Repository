@@ -1,0 +1,4 @@
+Numéro: 4  Priorité: 1
+Numéro: 3  Priorité: 1
+Numéro: 2  Priorité: 2
+Numéro: 1  Priorité: 1

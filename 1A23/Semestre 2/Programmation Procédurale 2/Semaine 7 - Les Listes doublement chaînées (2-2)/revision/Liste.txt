@@ -1,0 +1,2 @@
+Marque: Lenovo  Taille: 16  Quantite: 0  Prix: 700.000
+Marque: HP  Taille: 8  Quantite: 3  Prix: 500.000

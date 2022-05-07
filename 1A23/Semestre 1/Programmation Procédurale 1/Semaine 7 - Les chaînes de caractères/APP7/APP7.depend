@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1635426001 source:c:\users\hafeu\desktop\1a23\programmation procédurale 1\semaine 7 - les chaînes de caractères\app7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

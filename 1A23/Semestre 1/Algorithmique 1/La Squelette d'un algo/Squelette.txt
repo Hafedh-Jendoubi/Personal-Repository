@@ -1,0 +1,29 @@
+Algorithme (Nom_Exercice)
+
+Constant NMAX = 100
+
+Type
+  Nom_Enregistrement = Enregistrement
+  Fin Entregistrement
+
+  T = Tableau [1..NMAX] de Entier (Exemple)
+
+Var
+  ...
+
+Fonction Exemple(a: Entier): Entier
+  Var i: entier
+  Debut
+    ...
+    Exemple <- i
+  Fin
+
+Procedure
+  Var
+  Debut
+    ...
+  Fin
+
+Debut
+  ...
+Fin

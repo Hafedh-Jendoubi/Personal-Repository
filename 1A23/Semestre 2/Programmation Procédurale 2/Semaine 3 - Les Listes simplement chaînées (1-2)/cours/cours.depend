@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1645041888 source:c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 3 - les listes simplement chaînées (1-2)\cours\functions.c
+	"functions.h"
+
+1645041640 c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 3 - les listes simplement chaînées (1-2)\cours\functions.h
+	<stdlib.h>
+	<stdio.h>
+
+1645041640 source:c:\users\hafeu\desktop\1a23\semestre 2\programmation procédurale 2\semaine 3 - les listes simplement chaînées (1-2)\cours\main.c
+	"functions.h"
+
