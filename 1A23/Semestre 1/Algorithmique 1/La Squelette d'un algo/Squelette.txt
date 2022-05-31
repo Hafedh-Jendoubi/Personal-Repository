@@ -1,6 +1,6 @@
 Algorithme (Nom_Exercice)
 
-Constant NMAX = 100
+Constant NMAX = X (X un entier)
 
 Type
   Nom_Enregistrement = Enregistrement
@@ -18,8 +18,8 @@ Fonction Exemple(a: Entier): Entier
     Exemple <- i
   Fin
 
-Procedure
-  Var
+Procedure Example(a: Entier)
+  Var n: Entier
   Debut
     ...
   Fin

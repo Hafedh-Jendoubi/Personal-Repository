@@ -16,15 +16,15 @@ void loop() {
   BYTE = Serial.read();
   if(digitalRead(button1) == LOW && BYTE == '1'){
     if(digitalRead(ledG) == LOW)
-      Serial.println("Led-Green activated!\n");
+      Serial.println("Led-Green has been activated!\n");
     digitalWrite(ledG, HIGH);
   }else if(digitalRead(button2) == LOW && BYTE == '2'){
     if(digitalRead(ledR) == LOW)
-      Serial.println("Led-Red activated!\n");
+      Serial.println("Led-Red has been activated!\n");
     digitalWrite(ledR, HIGH);
   }else if(digitalRead(button1) == HIGH && digitalRead(button2) == HIGH && BYTE == '0'){
     if(digitalRead(ledR) == HIGH && digitalRead(ledG) == HIGH)
-      Serial.println("Led-Red & Led-Green desactivated\n");
+      Serial.println("Led-Red & Led-Green have been desactivated\n");
     digitalWrite(ledR, LOW);
     digitalWrite(ledG, LOW);
   }
