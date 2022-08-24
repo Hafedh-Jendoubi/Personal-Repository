@@ -1,0 +1,14 @@
+Abr pileversabr(Abr A ,pile *p)
+{
+    Emission E1;
+Reportage R;
+    while ((*p)!=NULL)
+    {
+        if((*p)->E.type==3)
+        {
+            A=Ajouter(A,R);
+            E1=depiler(*p);
+        }
+    }
+    return A;
+}

@@ -1,0 +1,18 @@
+struct cellule
+{ int valeur;
+  struct cellule *suivant;
+ };
+typedef cellule *liste;
+*****************************************
+
+------------------- Ici on défini la structure de données --------------                      
+typedef struct
+{
+    int i;
+}structure1;
+------------------ Ensuite on défini la structure de la liste chainée ------------------
+typedef struct 
+{
+    structure1 str;
+    struct liste_chaine *nxt;
+}liste_chaine;

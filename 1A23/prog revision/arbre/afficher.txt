@@ -1,0 +1,12 @@
+
+*****************Afficher la taille de arbre binaire***************
+int taille(Arbre A)//9adech fama men sommet fi l arbre
+{
+    if(A==NULL)
+    {
+
+        return (0);
+
+    }
+    else return (1+taille(A->ABG)+taille(A->ABD));
+}

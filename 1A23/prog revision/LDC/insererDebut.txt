@@ -1,0 +1,19 @@
+LDC Inserer_tete_LDC (LDC L, int x)
+{ cellule* nouv;
+  
+  nouv = (cellule*)malloc(sizeof(cellule));
+  if(!nouv)
+     printf("Espace memoire insuffisant\n");
+  else
+  {
+     nouv->val = x;
+     nouv->pred = NULL;
+     nouv->suiv = L.tete;
+     if(!(L.tete == NULL && L.queu == NULL))
+        L.tete -> pred = nouv; 
+     else // liste initiale vide
+        L.queu = nouv;
+     L.tete = nouv;
+  }
+  return(L);
+}

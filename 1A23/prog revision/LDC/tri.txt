@@ -1,0 +1,63 @@
+ 
+ 
+void reverse_elt(t_file *elt1, t_file *elt2)
+{
+  t_file        *previous_elt1;
+  t_file        *next_elt1;
+ 
+  next_elt1 = elt1->next;
+  previous_elt1 = elt1->previous;
+  if (my_strcmp(elt1->next, elt2) == 0)
+    {
+      elt1->next = elt2->next;
+      if (elt1->previous != NULL)
+        elt1->previous->next = elt2;
+      elt1->previous = elt2;
+      elt2->previous = previous_elt1;
+      if (elt2->next != NULL)
+	elt2->next->previous = elt1;
+      elt2->next = elt1;
+    }
+  else
+    {
+      elt1->next = elt2->next;
+      elt1->previous =  elt2->previous;
+      if (elt2->previous != NULL)
+        elt2->previous->next = elt1;
+      if (elt2->next != NULL)
+        elt2->next->previous = elt1;
+      elt2->next = next_elt1;
+      elt2->previous = previous_elt1;
+      if (elt2->next != NULL)
+        elt2->next->previous = elt2;
+      if (elt2->previous != NULL)
+	elt2->previous->next = elt2;
+    }
+}
+ 
+  t_file          *sort_result(t_file *l_of_file, int sens)
+  {
+    t_file        *master;
+    t_file        *slave;
+ 
+    master = l_of_file;
+    slave = l_of_file->next;
+    while (master != NULL)
+      {
+       	while (slave != NULL)
+          {
+            if (my_strcmp(master->name, slave->name) > 0)
+              {
+               	reverse_elt(master, slave);
+	        master = slave;
+	        slave = master;
+              }
+            slave = slave->next;
+          }
+        if (master->next == NULL)
+          return (go_to_begin(master));
+        master = master->next;
+        slave = master;
+      }
+    return (go_to_begin(master));
+  }

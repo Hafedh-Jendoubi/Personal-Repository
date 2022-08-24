@@ -1,0 +1,27 @@
+liste trier(liste la)
+{// ici on va ranger les elemants dans l'ordre croisssant avant de les afficher...
+ 
+   liste temp, temp1, temp3;
+   int min, a; 
+   temp3=(liste)malloc(sizeof(Liste));
+   temp1=(liste)malloc(sizeof(Liste));
+   temp=la;
+ 
+   while(temp!=NULL)
+   {  min=temp->val;
+     temp1=temp->next;           
+ 
+     while(temp1!=NULL)
+      {           
+    if(min > temp1->val)
+    {  temp3=temp1;      // le 3è tempraire me permet de savoir l'adresse de l'élement ou j'ai reperé le minimum pour faciliter l'échange
+        min=temp3->val; }                
+        temp1=temp1->next; } //a ce niveau je sors de la 2iem boucle
+       a=temp->val; //echange des 2 elements...
+       temp->val=min;
+       temp3->val=a;       
+ 
+       temp=temp->next;                        
+        }          
+ 
+        return la; }

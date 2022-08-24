@@ -1,0 +1,19 @@
+LDC Supprimer_tete_LDC (LDC L)
+{
+    // la liste est supposée non vide,le contrôle
+    // doit etre realisé dans la fonction main()
+    cellule* p = L.tete;
+
+    if(L.tete == L.queu) 
+        // liste contient 1 seul element
+        L = init_LDC(L);
+    else 
+        // liste contient plus qu’un element
+    {
+        L.tete = L.tete -> suiv;
+        L.tete -> pred = NULL;
+    }
+    free(p);
+
+    return L;
+}

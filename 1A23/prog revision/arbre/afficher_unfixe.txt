@@ -1,0 +1,27 @@
+Affichage d'un arbre binaire(parcours infixé)
+
+void afficher_infixe(Arbre A)(printf fi el west)
+{
+//Trier par ordre croissant 
+    if(A==NULL)
+    {
+        printf("-");
+    }
+    else
+    {
+        printf("{");
+
+
+        afficher_infixe(A->ABG);
+        printf(",");
+
+
+        printf("%f",A-E.moy);
+
+        printf(",");
+        afficher_infixe(A-ABD);
+
+        printf("}");
+
+    }
+}

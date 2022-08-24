@@ -1,0 +1,22 @@
+void afficher (Listep)
+{
+    if(p==NULL)
+    {
+        printf("Liste vide.\n");
+        //exit(1);
+    }
+    else
+    {
+        pile nouv=p;
+        int i=1;
+        while(nouv!=NULL)
+        {
+            printf("DVD %d a le titre %s et de taille %d",i,nouv->d.titre,nouv->d.taille);
+
+
+            nouv=nouv->next;
+            i++;
+        }
+    }
+
+}

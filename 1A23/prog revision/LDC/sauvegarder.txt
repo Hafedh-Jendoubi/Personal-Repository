@@ -1,0 +1,13 @@
+void sauvegarder(LDC mg,int n,char nomfich[])
+{
+   FILE *f=NULL;
+   cellule* parc=mg.tete;
+   f=fopen(nomfich,"w");
+   while(parc!=NULL)
+   {   if(parc->s.)
+       fprintf(f,"%d %s\n",parc->s.type,parc->s.designation);
+   }
+   while(!feof(f))
+   {
+
+   }

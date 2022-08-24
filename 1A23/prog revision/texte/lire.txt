@@ -1,0 +1,11 @@
+DATA Readtxt(char *chemin) // chemain exemple.txt
+{
+	DATA d;
+	FILE *f=fopen(chemin,"r");
+
+	fscanf(f, "le est %s\n", d.nom); // a changer selon la donnee  
+	///la &&& est importante pour les entier caractere float
+
+	fclose(f);
+	return d;
+}

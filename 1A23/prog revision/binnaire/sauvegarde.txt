@@ -1,0 +1,10 @@
+void sauvegarder(char nomFich[],voyageur *tab,int n)
+{
+  FILE *f;
+  f=fopen(nomFich,"wb");
+  if (f!=NULL)
+  {
+    fwrite(&tab,sizeof(voyageur),n,f);
+    fclose(f);
+  }
+}

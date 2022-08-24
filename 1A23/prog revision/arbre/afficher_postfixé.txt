@@ -1,0 +1,24 @@
+
+************Affichage d'un arbre binaire(parcours postfixé)**************
+
+
+void afficher_postfixe(Arbre A)// (printf fi el le5er)
+{
+    if(A==NULL)
+    {
+        printf("-");
+    }
+    else
+    {
+        printf("{");
+
+        afficher_postfixe(A->ABG);
+        printf(",");
+
+        afficher_postfixe(A->ABD);
+        printf(",");
+        printf("%f",A->E.moy);
+        printf("}");
+
+    }
+}

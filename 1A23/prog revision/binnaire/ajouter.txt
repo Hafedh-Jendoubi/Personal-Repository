@@ -1,0 +1,26 @@
+void ajouter(char nomFich[],voyageur v)
+{
+  FILE *f;
+  int n,i;
+  voyageur *tab;
+  n=nombreVoyeugeurs(nomFich);
+  tab=lire(nomFich);
+  for(i=0;i<n;i++)
+  {
+    if(strcmp(tab[i].id,v.id)==0)
+    {
+      tab[i].nbrV++;
+    }
+    else
+    {
+     tab=(voyageur*)realloc(tab,n * sizeof(voyageur));
+      tab[i]=v;
+      n++;
+
+    }
+  }
+  free(tab);
+        sauvegarder(nomFich,tab,n);
+
+
+}

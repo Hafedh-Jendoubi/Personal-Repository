@@ -1,0 +1,4 @@
+//tester si la liste est vide ou pas
+int liste_vide(liste l)
+{ return(l==NULL);
+}

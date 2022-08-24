@@ -1,0 +1,24 @@
+void supprimer(char nomFich[],char id[])
+{
+    voyageur *tab;
+    tab=lire(nomFich);
+    int n,i;
+    n=nombreVoyeugeurs(nomFich);
+    for(i=0;i<n;i++)
+    {
+     if(strcmp(tab[i].id,id)==0)
+     {
+       tab[i]=tab[i+1];
+       n--;
+       tab=(voyageur*)realloc(tab,n * sizeof(voyageur));
+     }
+     else
+     {
+         printf("Voyageur inexistant !! \n");
+     }
+    }
+   sauvegarder(nomFich,tab,n);
+          free(tab);
+
+}
+

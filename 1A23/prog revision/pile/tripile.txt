@@ -1,0 +1,36 @@
+pile tri_pile(pile p){
+    pile travail=NULL;
+    pile tri=NULL;
+    int x,v;
+    while (p!= NULL){
+ 
+        // On dépile un élément de la pile à trier
+        x=depile(p);
+        // On l'empile sur la pile tri
+        tri=empile(tri, x);
+        // Si le premier élément de la pile à trier est inférieur au premier de la pile triée
+        if (p->val <= tri->val){
+            // On dépile un élément de la pile à trier
+            x=depile(p);
+            // On l'empile dans la pile triée
+            tri=empile(tri, x);
+        }
+        // Si le premier élément de la pile à trier est supérieur à l'élément empilé
+        else{
+            // On parcourt la pile triée jusqu'à arriver à la fin
+            // ou à l'emplacement où insérer l'élément
+            while((tri!= NULL)&&(p->val > tri->val)){
+                // On dépile un élément de la pile triée
+                v= depile(tri);
+                // On le place dans la pile temporaire travail
+                travail=empile(travail, v);
+ 
+                // On dépile un élément de la pile à trier
+                x=depile(p);
+                // On l'empile dans la pile à trier
+                tri=empile(tri, x);
+            }
+        }
+    }
+    return tri;
+}

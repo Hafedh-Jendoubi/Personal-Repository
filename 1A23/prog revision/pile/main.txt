@@ -1,0 +1,3 @@
+//dans le main
+pile p;
+p=NULL

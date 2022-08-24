@@ -1,0 +1,21 @@
+void afficher_prefixe(Arbre A)// (printf melowel) 
+
+{
+    if(A==NULL)
+    {
+        printf("-");
+    }
+    else
+    {
+        printf("{");
+
+        printf("%f",A->E.moy);
+        printf(",");
+        afficher_prefixe(A->ABG);
+        printf(",");
+        afficher_prefixe(A->ABD);
+
+        printf("}");
+
+    }
+}

@@ -1,0 +1,6 @@
+LDC Liberer_LDC2(LDC L)
+{
+    while(!listeDC_vide(L))
+        L = Supprimer_queu_LDC(L);
+    return L;
+}

@@ -1,0 +1,20 @@
+arbre file2Arbre (file * f4, arbre abr)
+{
+    paquet p ;
+
+
+    do
+    {
+        p=consulterFile(f4);
+        defiler (f4);
+        if((p.e.prio!=-1))
+        {
+            if ((p.e.cttl)>0)
+            {
+                insererPaquetArbre (abr,p);
+            }
+        }
+    }
+    while (p.e.prio!=-1);
+
+}

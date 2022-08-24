@@ -1,0 +1,29 @@
+
+**************max et min ************************
+void minim(Arbre A)
+{
+
+    if(A->ABG==NULL)
+    {
+        printf("%d",A->val);
+    }
+    else
+    {
+        minim(A->ABG);
+
+    }
+}
+
+void maxim(Arbre A)
+{
+
+    if(A->ABD==NULL)
+    {
+        printf("%d",A->val);
+    }
+    else
+    {
+        maxim(A->ABD);
+
+    }
+}

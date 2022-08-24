@@ -1,0 +1,7 @@
+
+lwagon creer()
+{
+    lwagon w;
+    w=NULL;
+    return w;
+}

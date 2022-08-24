@@ -1,0 +1,3 @@
+//dans le main
+liste tete=NULL;
+//tester si la liste est vide ou pas

@@ -1,0 +1,19 @@
+LDC Supprimer_queue_LDC (LDC L)
+{
+    // la liste est supposée non vide,le contrôle
+    // doit etre realisé dans la fonction main()
+    cellule* p = L.queu;
+
+    if(L.tete == L.queu) 
+        // liste contient 1 seul element
+        L = init_LDC(L);
+    else 
+        // liste contient plus qu’un element
+    {
+        L.queu = L.queu -> pred;
+        L.queu -> suiv = NULL;
+    }
+    free(p);
+
+    return L;
+}

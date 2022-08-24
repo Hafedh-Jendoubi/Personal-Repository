@@ -1,0 +1,31 @@
+
+int chercher(Arbre A,float surface)//(printf fi el west)
+{
+    int x=0;
+
+    if(A==NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        if(A->P.surface > surface)
+        {
+            chercher(A->ABG,surface);
+
+        }
+        else if(A->P.surface < surface)
+        {
+            chercher(A->ABD,surface);
+        }
+
+        else if (A->P.surface == surface)
+        {
+            //if(strcmp(A->P.nom,nom)==0)
+                return 1;
+            //else chercher(A->ABG,nom,surface); zeyda
+        }
+
+    }
+}
+

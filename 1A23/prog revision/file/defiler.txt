@@ -1,0 +1,14 @@
+//defiler
+file defiler(file f)
+{ cellule *suppr;
+  if(!file_vide(f))
+{  suppr=f.tete;
+   if((f.tete)->suivant==NULL)
+  {f.tete=NULL;
+   f.queuee=NULL;  }
+  else f.tete=(f.tete)->suivant;
+       free(suppr);
+}
+else printf("file vide\n");
+return f;
+}

@@ -1,0 +1,21 @@
+*****************Insertion d'un arbre binaire**************
+
+Arbre insertion(Arbre A,pays p)
+{
+    if(A==NULL)
+    {
+        return(Cree_arbre(p));
+    }
+    else
+    {
+        if(p.surface > A->P.surface)
+            {
+                A->ABD=insertion(A->ABD,p);
+            }
+        else
+            {
+                A->ABG=insertion(A->ABG,p);
+            }
+            return A;
+    }
+}

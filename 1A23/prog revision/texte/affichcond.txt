@@ -1,0 +1,16 @@
+void affiche(char fichier[],int n )
+{
+    FILE *f;
+    employe e;
+    f=fopen(fichier,"r");
+
+    if((f!=NULL)&&(n>=e.nbEnfant))
+    {
+        while(!feof(f))
+        {
+            fscanf("%s %s%d\n",e.nom,e.prenom,&e.nbEnfant);
+        }
+    }
+
+    fclose(f);
+}

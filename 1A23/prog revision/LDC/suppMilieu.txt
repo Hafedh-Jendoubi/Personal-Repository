@@ -1,0 +1,31 @@
+LDC Supprimer_1ere_occ_LDC (LDC L, int elem)
+{
+ // la liste est supposée non vide, 
+ // le controle doit etre realisé dans la fonction main()
+    cellule* p = L.tete;
+
+    while(p && (p->val != elem))
+        p = p->suiv;
+
+    if(p) // elem existe dans la liste
+    {
+        if(p == L.tete)
+            L = Supprimer_tete_LDC(L);
+        else
+        {
+            if(p == L.queu)
+                L = Supprimer_queu_LDC(L);
+            else
+            {
+                (p->pred)->suiv = p->suiv;
+                (p->suiv)->pred = p->pred;
+                free(p);
+            }
+        }
+    }   
+    else
+        printf("\nErreur : %d à    
+ 	supprimer introuvable 	dans la liste", elem);
+
+    return L;
+}

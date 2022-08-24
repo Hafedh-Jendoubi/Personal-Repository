@@ -1,0 +1,15 @@
+//ajout a la fin d'une liste
+void ajouter_fin(liste L, int X)
+{
+liste actuel;
+Cellule *nouveau;
+Nouveau=(cellule*)malloc(sizeof(cellule));
+Nouveau->val=X;
+Nouveau->suivant=NULL;
+Actuel=L;
+While(actuel->suivant != NULL)
+{
+Actuel=actuel->suivant;
+}
+Actuel->suivant=nouveau;
+}

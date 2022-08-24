@@ -1,0 +1,15 @@
+voyageur *lire(char nomFich[])
+{
+  FILE *f;
+  int nbr;
+  voyageur *tab;
+  nbr=nombreVoyeugeurs(nomFich);
+  tab=(voyageur*)malloc(nbr*sizeof(voyageur));
+  f=fopen(nomFich,"rb");
+  if(f!=NULL)
+  {
+     fread(tab,sizeof(voyageur),nbr,f);
+     fclose(f);
+  }
+  return tab;
+}

@@ -1,0 +1,8 @@
+typedef struct cellule
+{ int valeur;
+  struct cellule *suivant;
+}cellule ;
+typedef struct file
+{   cellule *tete;
+    cellule *queuee;
+}file;

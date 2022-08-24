@@ -1,0 +1,6 @@
+LDC Liberer_LDC1(LDC L)
+{
+    while(!listeDC_vide(L))
+        L = Supprimer_tete_LDC(L); 
+    return L;
+}

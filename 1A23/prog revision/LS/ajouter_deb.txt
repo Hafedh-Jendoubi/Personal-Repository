@@ -1,0 +1,10 @@
+//ajout debut dans une liste
+liste Ajouter_debut(liste L; int x)
+{  
+Cellule *nouveau;
+Nouveau=(cellule*)malloc(sizeof(cellule));
+Nouveau->val=x;
+Nouveau->suivant=L;
+L=nouveau;
+Return L
+}

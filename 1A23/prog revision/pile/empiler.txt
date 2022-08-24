@@ -1,0 +1,12 @@
+//empiler 
+pile empiler(pile p,int x)
+{ pile nouv;
+  nouv=malloc(sizeof(struct cellule));
+  if(nouv==NULL) printf("debordement de la pile\n");
+else {
+  nouv->valeur=x;
+  nouv->suivant=p;
+  p=nouv;
+    }
+   return p;
+}

@@ -1,0 +1,39 @@
+//affichage recursive
+void afficher_liste_inversee (liste l)
+{ if(l!=NULL)
+
+{ l=l->suivant;
+  afficher_liste_inversee(l);
+  printf("%s %d",l->nom,l->moy);
+}
+}
+//suppression recursive
+liste supprimer_etudiant (liste l, char *nom)
+{
+if(l==NULL)
+{ return l;)
+else if(strcmp(l->e.nom,nom)==0)
+{ liste supp=l;
+l=l->suivant;
+ free(supp);
+return l;
+}
+else l->suivant=supprimer_etudiant(l->suivant,nom);
+}
+//affichage recursive d'un tableau
+void afficher (int tab[], int n, int i)
+{  if(i<n)
+  {
+      printf("%d",tab[i]);
+      i++;
+      afficher(tab,n,i);
+  }
+
+}
+/*ou*/ :
+void afficher(int t[],int n,int i)
+{
+    if(i<n) {printf("%d",t[i]);
+              afficher(t,n,i);}
+
+}

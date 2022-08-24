@@ -1,0 +1,18 @@
+char *trouver(char nomFiche[])
+{
+    int n,i,o,max;
+    voyageur *tab;
+    tab=lire(nomFiche);
+    n=nombreVoyeugeurs(nomFiche);
+    max=tab[0].nbrV;
+     for (i=1;i<n;i++)
+ {
+   if(tab[i].nbrV>max)
+   {
+       max=tab[i].nbrV;
+       o=i;
+   }
+}
+    free(tab);
+    return tab[o].id;
+}

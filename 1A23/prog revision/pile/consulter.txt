@@ -1,0 +1,6 @@
+// consulter le sommet de la pile
+
+int premier(pile p)
+{
+return (p->Valeur);
+}

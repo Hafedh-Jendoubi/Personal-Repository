@@ -1,0 +1,16 @@
+file enfiler(file f,int x)
+{ cellule *nouv;
+  nouv=malloc(sizeof(struct cellule));
+  nouv->valeur=x;
+  nouv->suivant=NULL;
+  if(file_vide(f))
+  {
+   f.tete=nouv;
+   f.queuee=nouv;
+  }
+ else 
+ { (f.queuee)->suivant=nouv;
+   f.queuee=nouv;
+ }
+ return f;
+}

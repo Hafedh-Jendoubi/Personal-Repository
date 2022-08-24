@@ -1,0 +1,18 @@
+LDC ajout_fin(LDC l,int v)
+{  
+  cellule* nouv=(cellule*)malloc(sizeof(cellule));
+  nouv->val=v;
+  nouv->suivant=NULL; 
+  if(liste_vide(l))
+{  nouv->precedent=NULL;
+   l.tete=nouv; 
+   l.queue=nouv;   
+}
+else
+{
+  l.queue->suivant=nouv;
+  nouv->precedent=l.queue;
+  l.queue=nouv;
+}
+return l;
+}

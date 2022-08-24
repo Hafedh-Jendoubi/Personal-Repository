@@ -1,0 +1,15 @@
+void Afficher_LDC (LDC L)
+{ cellule* p;
+  
+  if(L.tete == NULL && L.queu == NULL)
+     printf ("Liste vide\n")
+  else
+  {
+     p = L.tete;
+     while(p)
+     {
+        printf("%d\t");
+        p = p->suiv; 
+     }
+  }
+}

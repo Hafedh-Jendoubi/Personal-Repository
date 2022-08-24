@@ -1,0 +1,10 @@
+Arbre Cree_arbre(pays P)//creation d'un noeud
+{
+    Arbre nouv=malloc(sizeof(Tnoeud));
+
+    nouv->P=P;
+    nouv->ABG=NULL;
+    nouv->ABD=NULL;
+
+    return nouv;
+}

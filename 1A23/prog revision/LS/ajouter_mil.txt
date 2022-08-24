@@ -1,0 +1,15 @@
+//ajout au milieu de la liste
+void ajouter-moitier(liste L, int X,int Y)
+{
+Cellule *nouveau;
+Nouveau=(cellule*)malloc(sizeof(cellule));
+Nouveau->val=X;
+Actuel=L;
+While(actuel !=NULL || actuel->val<Y)
+{
+Prec=actuel;
+Actuel=actuel->suivant;
+}
+Prec->suivant=nouveau;
+Nouveau->suivant=actuel;
+}

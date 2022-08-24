@@ -1,0 +1,23 @@
+void supp(char fichier[])
+{
+    char fichien[100];
+    employe e;
+    FILE *f,*fn;
+    f=fopen(fichier,"r");
+    fn=fopen(fichien,"w");
+    if(f!=NULL)
+    {
+        while(!feof(f))
+        {
+            fscanf(f,"%s %s %d",e.nom,e.prenom,&e.nbEnfant);
+            if(e.nbEnfant!=0)
+            {
+                fprintf(fn,"%s %s %d\n",e.nom,e.prenom,e.nbEnfant);
+            }
+        }
+        fclose(f);
+        fclose(fn);
+        remove(fichier);
+        rename(fichien,fichier);
+    }
+}

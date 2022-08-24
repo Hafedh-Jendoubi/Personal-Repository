@@ -1,0 +1,4 @@
+//dans le main
+file f;
+f.tete=NULL;
+f.queuee=NULL;

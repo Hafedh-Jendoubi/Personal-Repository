@@ -1,0 +1,17 @@
+
+int chercher (char nomFich[],char nom[])
+{
+    char NOM[20],PRENOM[20];
+    int NB;
+   f=fopen(nomFich,"r");
+    if (f==NULL)
+    {
+        printf("Un erreur existe.\n");
+        exit(1);
+    }
+    while(fscanf(f,"%s %s %d",NOM,PRENOM,&NB)!=EOF)
+    {
+        if(strcmp(PRENOM,nom)==0) return 1;
+    }
+    return 0;
+}

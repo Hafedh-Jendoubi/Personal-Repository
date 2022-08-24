@@ -1,0 +1,10 @@
+typedef struct cellule
+{    station s;
+     struct Cellule* suiv;
+     struct Cellule* pred;
+} cellule;
+typedef struct listeDC
+{
+     cellule* tete;
+     cellule* queu;
+}LDC;

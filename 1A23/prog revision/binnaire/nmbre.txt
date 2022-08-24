@@ -1,0 +1,12 @@
+int nombreVoyeugeurs(char nomFich[])
+{
+  FILE *f;
+  voyageur v;
+  int i;
+  while(fread(&v,sizeof(voyageur),1,f))
+  {
+    i++;
+  }
+  fclose(f);
+  return i;
+}

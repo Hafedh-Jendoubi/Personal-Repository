@@ -1,0 +1,14 @@
+pile depiler(pile p)
+{
+pile suppr;
+if (p != NULL)
+{
+suppr = p;
+p= p->Suivant;
+free(suppr);
+}
+else
+printf("PILE VIDE, Impossible de retirer un élément");
+
+return p;
+}

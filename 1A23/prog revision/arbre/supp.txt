@@ -1,0 +1,56 @@
+****************Suppression d'un arbre***********
+int maxim(Arbre A)
+{
+
+    if(A->ABD==NULL)
+    {
+        return A->P.surface;
+
+    }
+    else
+    {
+        maxim(A->ABD);
+
+    }
+    return A->P.surface;
+}
+
+Arbre supprimer (Arbre A,pays P)
+{
+    Arbre tmp;
+    Tnoeud* x;
+    int x;
+    if (A!=NULL)
+    {
+        if(P.surface < A->P.surface)
+            A->ABG=supprimer(A->ABG,P);
+        else if(P.surface > A->P.surface)
+            A->ABD=supprimer(A->ABD,P);
+        else if(P.surface==A->P.surface && strcmp(P.nom,A->P.nom)==0)
+        {
+            if(A->ABG==NULL && A->ABD==NULL)
+            {
+                free(A);//suppression d'une feille
+            }
+            if( A->ABG!=NULL && A->ABD!=NULL)
+            {
+                x=maxim(A->ABG);
+                A->P.surface=x;
+                A->ABG=supprimer(A->ABG,P);
+            }
+            if(A->ABG!=NULL && A->ABD==NULL)
+            {
+                tmp=A;
+                A=A->ABG;
+                free(tmp);
+            }
+            if(A->ABG==NULL && A->ABD!=NULL)
+            {
+                tmp=A;
+                A=A->ABD;
+                free(tmp);
+            }
+        }
+    }
+    return A;
+}

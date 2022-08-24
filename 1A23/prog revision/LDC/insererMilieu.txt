@@ -1,0 +1,28 @@
+LDC Inserer_milieu_avant_cond_LDC (LDC L, int x, int elem)
+{
+    cellule* p; cellule* nouv;
+ // la liste est supposée non vide, 
+ // le controle doit etre realisé dans la fonction main()
+    p = L.tete;
+    while(p && (p->val != elem))
+        p = p->suiv;
+    if(p) // elem existe dans la liste
+    {
+        if(p == L.tete)
+            L = Inserer_tete_LDC (L, x);
+        else
+        {
+            nouv = (cellule*)malloc(sizeof(cellule));
+            nouv->val = x;
+            nouv->suiv = p;
+            nouv->pred = p->pred;
+            (p->pred)->suiv = nouv;
+            p->pred = nouv;
+        }
+    }   
+    else
+        printf("\nErreur : %d
+	     introuvable dans la 	     liste, impossible                	     d'inserer %d avant !", 	     elem, x);
+
+    return L;
+}

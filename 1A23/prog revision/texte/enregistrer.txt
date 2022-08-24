@@ -1,0 +1,10 @@
+void enregistrer(employe e, char fichier[])
+{
+    FILE *f;
+    f=fopen(fichier,"a");
+    if(f!=NULL)
+    {
+        fprintf(f,"%s %s %d\n",e.nom,e.prenom,e.nbEnfant);
+    }
+    fclose(f);
+}

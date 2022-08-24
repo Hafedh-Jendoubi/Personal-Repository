@@ -1,0 +1,14 @@
+float prixtot(LDC mg)
+{
+    int i,n=0;
+    float prix=0;
+    cellule* parc=mg.tete;
+    while(parc!=NULL)
+    {   n++;
+        parc=parc->suivant;
+    }
+    for(i=0;i<n;i++)
+        {
+            prix=prix+parc->s.tab[i].prix;
+        }
+}

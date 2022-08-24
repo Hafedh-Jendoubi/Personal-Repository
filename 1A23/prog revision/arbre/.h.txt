@@ -1,0 +1,19 @@
+typedef struct
+{
+    char nom[50],prenom[50];
+    float moy;
+}Etudiant;
+
+
+typedef struct Tnoeud Tnoeud;
+struct Tnoeud
+{
+    Etudiant E;
+    Tnoeud *ABG;
+    Tnoeud *ABD;
+
+};
+
+typedef Tnoeud* Arbre ;
+//Arbre A=NULL;
+

@@ -1,0 +1,21 @@
+void afficher(file f)
+{
+if((f.tete==NULL)&&(f.queu==NULL))
+{
+printf("file vide");
+}
+else
+{
+printf("premier spectateur\n");
+printf("id:%d\n",(f.tete)->s.id);
+printf("dernier spectateur\n");
+printf("id:%d\n",(f.queu)->s.id);
+}
+}
+
+//consulter sommet de la file
+int consulter(file f)
+{
+return ((f.tete)->valeur);
+}
+

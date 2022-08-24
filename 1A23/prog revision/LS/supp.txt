@@ -1,0 +1,26 @@
+
+liste supprimer-element(liste l, int val)
+{
+liste prec,temp;
+if(l== NULL) //liste vide
+printf("liste vide\n");
+else if (l->val == val)
+{
+temp=L;
+l=l->suivant;
+free(temp);
+}
+prec=l;
+temp=l->suivant;
+while(temp != NULL)
+{
+if(temp->val == val)
+{prec->suivant= temp->suivant;
+free(temp);
+break;
+}
+prec=temp;
+temp=temp->suivant;
+}
+return (l);
+}
