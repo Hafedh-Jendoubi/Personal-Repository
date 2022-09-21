@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1663596196 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\c++ orienté objet\td1\ex3\etudiant.cpp
+	"Etudiant.h"
+
+1663598528 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\c++ orienté objet\td1\ex3\etudiant.h
+	<iostream>
+	<string>
+
+1663596431 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\c++ orienté objet\td1\ex3\main.cpp
+	"Etudiant.h"
+

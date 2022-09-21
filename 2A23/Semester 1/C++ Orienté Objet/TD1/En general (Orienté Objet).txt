@@ -1,0 +1,28 @@
+Rectangle.h
+
+class Rectangle
+{
+   float h;
+   float l;
+   float Surface();
+};
+
+-----------------------------
+
+Rectangle.cpp
+
+#include "Rectangle.h"
+float Rectangle::Surface()
+   return h*l;
+
+-----------------------------
+
+main.cpp
+
+int main()
+{
+   Rectangle r1, r2;
+   
+   cin >> r1.h; cin >> r1.l;
+   cout << "   " << r1.surface();
+}
