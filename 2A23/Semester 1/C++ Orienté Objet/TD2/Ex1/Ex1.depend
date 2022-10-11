@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1664197704 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td2\ex1\main.cpp
+	<iostream>
+	"Compte.h"
+
+1664198373 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td2\ex1\compte.h
+
+1664198373 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td2\ex1\compte.cpp
+	"Compte.h"
+

@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1664721959 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td2\ex 3\main.cpp
+	"abonne.h"
+	"operateur.h"
+
+1664721501 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td2\ex 3\abonne.h
+	<iostream>
+
+1664721519 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td2\ex 3\abonne.cpp
+	"abonne.h"
+
+1664722065 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td2\ex 3\operateur.cpp
+	"operateur.h"
+
+1664721940 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td2\ex 3\operateur.h
+	<iostream>
+	"abonne.h"
+

@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1664809124 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td3\ex4\main.cpp
+	"Notes.h"
+
+1664804447 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td3\ex4\notes.h
+	<iostream>
+
+1664805090 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td3\ex4\notes.cpp
+	"Notes.h"
+

@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1664811494 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td3\ex5\hebergement.cpp
+	"Hebergement.h"
+
+1664811494 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td3\ex5\hebergement.h
+	<iostream>
+
+1664811494 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td3\ex5\voyage.cpp
+	"Voyage.h"
+
+1664811371 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td3\ex5\voyage.h
+	"Hebergement.h"
+

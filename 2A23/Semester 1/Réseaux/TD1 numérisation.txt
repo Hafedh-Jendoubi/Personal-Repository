@@ -1,0 +1,25 @@
+Exercice 1:
+
+   a/ Fmax  = 20kHz
+
+	Theoreme de Shanon: Fe >= 2 x Fmax
+
+				  (Fe)min = 2 x 20 = 40 kHz
+
+   b/ nmbre ehantillon = T/Te = T * Fe 
+					= 15 x 60 x 44,1 x 10^3
+					= 39,690 x 10^6 E
+
+	Taille = 39,69 x 10^6 x 16
+		 = 635,04 Mbits 
+
+
+Exercice 3:
+
+   1/ (2 * 3072) / 2048 = 3 V = (Delta)e
+
+   2/ n = log2(2048) = ln(2048) / ln(2) = 11 bit
+
+Exercice 4:
+
+   D = n * Fe = 8 * 8000 = 64000 Bits = 64kBits

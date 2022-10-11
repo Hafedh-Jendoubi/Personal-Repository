@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1664204324 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td2\ex2\compte.cpp
+	"Compte.h"
+
+1664204335 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td2\ex2\compte.h
+	<iostream>
+
+1664204673 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td2\ex2\main.cpp
+	"Compte.h"
+	"Banque.h"
+
+1664203711 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td2\ex2\banque.h
+	"Compte.h"
+
+1664204802 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td2\ex2\banque.cpp
+	"Banque.h"
+

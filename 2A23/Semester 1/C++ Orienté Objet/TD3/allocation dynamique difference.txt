@@ -1,0 +1,8 @@
+  c++    |   c
+
+
+malloc() = new()
+
+free()   = delete()
+
+mangasee123.com

@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1664809817 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td3\ex1\fete.cpp
+	"Fete.h"
+
+1664809817 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td3\ex1\fete.h
+	<iostream>
+
+1664809817 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td3\ex1\main.cpp
+	"Fete.h"
+
