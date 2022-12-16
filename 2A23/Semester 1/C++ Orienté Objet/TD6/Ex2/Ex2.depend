@@ -1,0 +1,44 @@
+# depslib dependency file v1.0
+1668945730 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex2\abonne.cpp
+	"abonne.h"
+
+1669038159 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex2\abonne.h
+	"ouvrage.h"
+
+1669042492 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex2\ouvrage.h
+	<iostream>
+	<string>
+
+1669044535 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex2\livre.cpp
+	"livre.h"
+
+1669044623 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex2\livre.h
+	"ouvrage.h"
+
+1669043061 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex2\main.cpp
+	"ouvrage.h"
+	"livre.h"
+	"video.h"
+	"abonne.h"
+	"biblio.h"
+
+1667835021 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex2\ouvrage.cpp
+	"ouvrage.h"
+
+1667834803 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex2\video.cpp
+	"video.h"
+
+1667834761 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex2\video.h
+	"ouvrage.h"
+
+1669044545 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex2\biblio.h
+	<vector>
+	<typeinfo>
+	"ouvrage.h"
+	"livre.h"
+	"video.h"
+	"abonne.h"
+
+1669044636 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex2\biblio.cpp
+	"biblio.h"
+

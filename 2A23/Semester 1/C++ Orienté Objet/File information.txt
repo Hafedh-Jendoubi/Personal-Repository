@@ -1,0 +1,46 @@
+class abstraite.. MVP
+
+#include <fstream>
+
+int main()
+{
+	//Ecriture
+->'o' ofstream file; 			|		ofstream file("___.txt", ios::append); //Everytime u use file.open(); the 
+	 file.open("___.txt"); 		|										   contenu of the file will be
+																	   deleted, so you use ios::app
+	if(file){															 to avoid the delete of the contenu
+		string ch = "nour";												 of the file if u want juste to add
+		file << ch;													new in the file instead of writing 
+		file.close();													   things.
+	}
+}
+
+#include <fstream>
+
+int main()
+{
+	//Lecture
+->'i' ifstream file;
+	 file.open("___.txt");
+									"if you want to read all the file, the other one reads only 1 line"
+	if(file){				|	while(file >> ch )
+		string ch;		|		cout < ch;
+		file >> ch;;		|
+		file.close();		|
+	}
+}
+
+// Read a line in e:
+string e;
+getline(file, e);
+cout << e
+
+// Read word by word:
+string m;
+while(file >> m)
+	cout << m;
+
+// Read by caracter:
+char c;
+while(file.get(c))
+	cout << c;

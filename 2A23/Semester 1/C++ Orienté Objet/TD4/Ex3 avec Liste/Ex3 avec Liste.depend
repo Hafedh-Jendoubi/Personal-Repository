@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1666014100 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td4\ex3 avec liste\ouvrage.cpp
+	"ouvrage.h"
+
+1666014774 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td4\ex3 avec liste\ouvrage.h
+	<iostream>
+	<string>
+
+1666013170 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td4\ex3 avec liste\main.cpp
+	"ouvrage.h"
+	"Bibliotheque.h"
+
+1666014592 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td4\ex3 avec liste\bibliotheque.h
+	"ouvrage.h"
+	<list>
+
+1666014850 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td4\ex3 avec liste\bibliotheque.cpp
+	"Bibliotheque.h"
+

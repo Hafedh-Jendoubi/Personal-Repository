@@ -1,0 +1,14 @@
+Exercice 1:
+
+1/Capacité c'est le début maximum
+  on a: W = 300 hz
+        RSB = 3dB
+  avec 
+    C = W x Log2(1 + Ps/Pb) or RSB = 10 Log10(Ps/Pb)
+						  sig:
+ 						    Log10(Ps/Pb) = RSB/10 = 3/10 = 0.3
+						 => Ps/Pb = 10^0.3 = 1.99
+
+  donc C = W * Log2(1 + 1.99) = 300 * Log2(2.99) = 415bit/s
+
+2/ 

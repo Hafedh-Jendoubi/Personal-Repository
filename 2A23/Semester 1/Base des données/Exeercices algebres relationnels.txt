@@ -1,0 +1,60 @@
+Q1:
+
+R1 = SELECTION(lesfilms, pays='France')
+R2 = PROJECTION(R1, titre, annee, realisateur)
+
+ou bien:
+
+R = PROJECTION(SELECTION(lesfilms, pays='France'), titre, annee, realisateur)
+
+------------
+
+Q2:
+
+R1 = JOINTURE(lesfilms, lesacteurs, lesfilms.titre = lesacteurs.titre)
+R2 = SELECTION(R1, acteur = 'Gabin')
+R3 = PROJECTION(R2, annee)
+
+ou bien:
+
+This is what we all thought:
+R = PROJECTION(SELECTION(JOINTURE(lesfilms, lesacteurs, lesfilms.titre = lesacteurs.titre), acteur = 'Gabin'), annee)
+
+This is what Nike did and chad S7I7:
+R = PROJECTION(JOINTURE(lesfilms, SELECTION(lesacteurs, acteur = 'Gabin'), lesfilms.titre = lesacteurs.titre), annee)
+but Emna explained saying that:
+JOINTURE, lazemha deux tables fel parametres, donc 3ana lesfilms table1 w el SELECTION bch traj3elna table ekhr donc s7i7.
+------------
+
+Q3:
+
+R1 = JOINTURE(lesfilms, lesacteurs,lesfilms.titre, lesacteurs.titre)
+R2 = SELECTION(R1, realisateur = 'Truffaut')
+R3 = PROJECTION(R2, acteur)
+
+SQL:
+
+select annee from lefilms, lesacteurs where lesfilms.titre = lesacteurs.titre and lesacteurs.acteur = 'Gabin';
+
+------------
+
+Q4:
+
+R1 = SELECTION(lesacteurs, acteur = 'Deneuve')
+R2 = PROJECTION(R1, acteur)
+
+------------
+
+Q5:
+
+R1 = JOINTURE(lesfilms, lesacteurs,lesfilms.titre, lesacteurs.titre)
+R2 = SELECTION(R1, acteur = realisateur)
+R3 = PROJECTION(R2, titre, pays, annee, realisateur, duree)
+
+-----------
+
+Q6:
+
+R1 = JOINTURE(lesfilms, lesacteurs,lesfilms.titre, lesacteurs.titre)
+R2 = SELECTION(R1, realisateur <>  acteur)
+R3 = PROJECTION(R2, realisateur)

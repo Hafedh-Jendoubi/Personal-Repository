@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1670577364 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td8\ex1\main.cpp
+	"note.h"
+
+1670581663 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td8\ex1\note.h
+	<iostream>
+	<string>
+
+1670577908 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td8\ex1\note.cpp
+	"note.h"
+
+1670577991 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td8\ex1\tag.cpp
+	"tag.h"
+
+1670577961 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td8\ex1\tag.h
+	"note.h"
+

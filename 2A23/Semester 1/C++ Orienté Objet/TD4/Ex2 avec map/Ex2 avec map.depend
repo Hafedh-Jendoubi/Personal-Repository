@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1666019671 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td4\ex2 avec map\main.cpp
+	"evenement.h"
+	"application.h"
+
+1666019992 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td4\ex2 avec map\evenement.h
+	<iostream>
+	<string>
+
+1666019999 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td4\ex2 avec map\evenement.cpp
+	"evenement.h"
+
+1666020055 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td4\ex2 avec map\application.cpp
+	"application.h"
+
+1666019992 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td4\ex2 avec map\application.h
+	<map>
+	"evenement.h"
+

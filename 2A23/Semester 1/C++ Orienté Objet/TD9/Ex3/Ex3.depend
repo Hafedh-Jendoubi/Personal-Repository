@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1670775827 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td9\ex3\main.cpp
+	"Tableau.h"
+
+1670775686 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td9\ex3\tableau.h
+	<iostream>
+

@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1667827654 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex 1\compte.cpp
+	"compte.h"
+
+1667832675 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex 1\compte.h
+	<iostream>
+
+1667831074 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex 1\epargne.cpp
+	"epargne.h"
+
+1667831125 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex 1\epargne.h
+	"compte.h"
+
+1667831069 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex 1\courant.cpp
+	"courant.h"
+
+1667831123 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex 1\courant.h
+	"compte.h"
+
+1668433159 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex 1\main.cpp
+	"compte.h"
+	"epargne.h"
+	"courant.h"
+	"banque.h"
+
+1668432068 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex 1\banque.h
+	<vector>
+	<typeinfo>
+	"compte.h"
+	"courant.h"
+	"epargne.h"
+
+1668433109 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td6\ex 1\banque.cpp
+	"banque.h"
+

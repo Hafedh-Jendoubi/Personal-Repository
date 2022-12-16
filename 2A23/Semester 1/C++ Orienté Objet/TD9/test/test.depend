@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1671021052 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td9\test\main.cpp
+	"animal.h"
+	"lion.h"
+	"medecin.h"
+	"zoo.h"
+
+1671020228 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td9\test\animal.h
+	<iostream>
+	<string>
+	<vector>
+
+1671016794 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td9\test\lion.h
+	"animal.h"
+
+1671021011 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td9\test\medecin.h
+	"animal.h"
+
+1671021067 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td9\test\zoo.h
+	"medecin.h"
+	"animal.h"
+	"lion.h"
+	<typeinfo>
+
+1671020281 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td9\test\animal.cpp
+	"animal.h"
+
+1671016838 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td9\test\medecin.cpp
+	"medecin.h"
+
+1671019393 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td9\test\zoo.cpp
+	"zoo.h"
+
+1671016791 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td9\test\lion.cpp
+	"lion.h"
+

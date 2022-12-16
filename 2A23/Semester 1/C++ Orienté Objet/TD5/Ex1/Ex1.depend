@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1666624494 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td5\ex1\article.cpp
+	"article.h"
+
+1666624669 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td5\ex1\article.h
+	<iostream>
+	<string>
+
+1666624713 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td5\ex1\main.cpp
+	"article.h"
+	"articleSolde.h"
+
+1666624480 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td5\ex1\articlesolde.h
+	"article.h"
+
+1666624635 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td5\ex1\articlesolde.cpp
+	"articleSolde.h"
+

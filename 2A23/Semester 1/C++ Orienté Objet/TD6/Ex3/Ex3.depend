@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1669569714 source:c:\users\hafeu\desktop\test\main.cpp
+	"epreuve.h"
+	"pratique.h"
+	"quiz.h"
+	"institution.h"
+
+1669567988 c:\users\hafeu\desktop\test\epreuve.h
+	<iostream>
+
+1669560674 source:c:\users\hafeu\desktop\test\epreuve.cpp
+	"epreuve.h"
+
+1669553510 source:c:\users\hafeu\desktop\test\pratique.cpp
+	"pratique.h"
+
+1669569440 c:\users\hafeu\desktop\test\pratique.h
+	"epreuve.h"
+
+1669567677 source:c:\users\hafeu\desktop\test\quiz.cpp
+	"quiz.h"
+
+1669567641 c:\users\hafeu\desktop\test\quiz.h
+	"epreuve.h"
+	<string>
+
+1669569468 c:\users\hafeu\desktop\test\institution.h
+	"epreuve.h"
+	"pratique.h"
+	"quiz.h"
+	<vector>
+	<typeinfo>
+
+1669569781 source:c:\users\hafeu\desktop\test\institution.cpp
+	"institution.h"
+

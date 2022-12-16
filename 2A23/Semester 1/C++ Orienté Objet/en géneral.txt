@@ -1,0 +1,14 @@
+redefinition: meme nom du fonction et pas de parametres
+surdefinition: meme nom du fonction mais parametres differentes
+symbol "<<" called "chevrons"
+Destructeur du classe mere has to be virtual
+if you use a getteur using const you should add "const" in front of the getteur.
+
+
+
+I am not sure about this idea:
+
+Si objet courant a gauche de l'operateur alors operateur interne Sinon operateur externe et utilise "friend"
+Exemple:
+V1.operator=(V2) V1 objet courant a gauche de l'operateur alors operateur interne
+file.operator<<(*it) *it est l'objet courant a droite de l'operateur alors operateur externe

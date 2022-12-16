@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1669649517 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td7\ex2\animal.cpp
+	"animal.h"
+
+1669649574 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td7\ex2\animal.h
+	<iostream>
+	<string>
+	<vector>
+
+1669646657 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td7\ex2\lion.cpp
+	"lion.h"
+
+1669646697 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td7\ex2\lion.h
+	"animal.h"
+
+1669649667 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td7\ex2\main.cpp
+	"animal.h"
+	"lion.h"
+	"veterinaire.h"
+	"zoo.h"
+
+1669646005 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td7\ex2\veterinaire.cpp
+	"veterinaire.h"
+
+1669649883 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td7\ex2\veterinaire.h
+	"animal.h"
+
+1669649635 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td7\ex2\zoo.cpp
+	"zoo.h"
+
+1669649843 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td7\ex2\zoo.h
+	"animal.h"
+	"veterinaire.h"
+	"lion.h"
+

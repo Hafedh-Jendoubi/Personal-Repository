@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1670764619 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td9\ex1\main.cpp
+	"fonctions.h"
+
+1670764756 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td9\ex1\fonctions.h
+	<iostream>
+	<vector>
+

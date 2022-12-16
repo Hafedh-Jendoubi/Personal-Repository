@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1669648320 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td7\ex1\produit.cpp
+	"produit.h"
+
+1669648186 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td7\ex1\produit.h
+	<iostream>
+	<string>
+
+1669648186 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td7\ex1\main.cpp
+	"produit.h"
+

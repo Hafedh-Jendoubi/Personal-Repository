@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1666622890 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td5\ex3\c_courant.cpp
+	"c_courant.h"
+
+1666619934 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td5\ex3\c_courant.h
+	"compte.h"
+
+1666622996 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td5\ex3\c_epargne.cpp
+	"c_epargne.h"
+
+1666619715 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td5\ex3\c_epargne.h
+	"compte.h"
+
+1666619509 c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td5\ex3\compte.h
+	<iostream>
+
+1666619334 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td5\ex3\compte.cpp
+	"compte.h"
+
+1666623041 source:c:\users\hafeu\desktop\hafedh\personal-repository\2a23\semester 1\c++ orienté objet\td5\ex3\main.cpp
+	"compte.h"
+	"c_epargne.h"
+	"c_courant.h"
+

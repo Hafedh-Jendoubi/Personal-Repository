@@ -1,0 +1,106 @@
+Héritage:
+
+Employe.h:
+
+Class Employe{
+  // We deleted (private:) and we replaced it by (protected:) because of Heritage.
+  protected:
+	String nom;
+	string prenom;
+	float salaire;
+  public:
+	Employe();
+	Employe(String, String, Float);
+	~Employe();
+  /**
+	String getNom() {return nom;};
+	String getPrenom() {return prenom;};
+	Float getSalaire() {return salaire;};
+
+   All this will get removed because les attribut will be available due to protected: not private:
+  **/
+};
+
+-----------------------------------------
+
+Ouvrier.h:
+
+#include "Employe.h"
+
+Class Ouvrier:public Employe{
+  private:
+	int heuresupp;
+  public:
+	Ouvrier();
+	Ouvrier(String, String, Float, Int);
+	~Ouvrier();
+	void afficher();
+};
+
+-----------------------------------------
+
+Employe.cpp
+
+Employe::Employe()
+{
+	nom = "";
+	prenom = "";
+	salaire = 0;
+}
+
+Employe::Employe(String a, String b, Float c)
+{
+	nom = a;
+	prenom = b;
+	salaire = c;
+}
+
+void Employe::afficher()
+{
+	cout << nom << prenom << salaire;
+}
+
+-----------------------------------------
+
+Ouvrier.cpp
+
+Ouvrier::Ouvrier()
+{
+	heuresupp = 0;
+}
+
+Ouvrier::Ouvrier(String a, String b, Float c, Int d):Employe(a, b, c)
+{
+	heuresupp = d;
+}
+
+void Ouvrier::afficher()
+{
+	Employe::afficher()
+	cout << heuresupp;
+}
+
+-----------------------------------------
+
+main.cpp
+
+Employe E; // Constructeur par défaut Employe
+Ouvrier O1; // Constructeur par défaut Employe
+						puis
+			 Constructeur par défaut Ouvrier
+
+Ouvrier O2("nom", "prenom", 1, 1);
+
+O2.afficher(); // Elle va afficher seulement nom, prenom, salaire. car un Ouvrier est un Employe.
+
+/**Destructeur des objets.. Destructeur Ouvrier
+							puis
+				        Destructed Employe
+**/
+
+Ouvrier * O3 = new Ouvrier;
+delete O3;
+
+
+
+

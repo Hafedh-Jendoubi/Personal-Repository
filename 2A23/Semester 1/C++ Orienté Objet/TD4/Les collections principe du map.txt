@@ -1,0 +1,23 @@
+#include <map>
+
+map<string, int> np;
+
+np["Janvier"] = 31;
+
+map<string, int>::iterator it;
+for(it = np.begin(); it != np.end(); it++){
+  cout << it->first << it->second
+
+for(it = np.begin(); it != np.end(); it++){
+  cout << np.find("Janvier")->second;
+
+Si on ajoute dans un map <int, int> (2, 200)
+
+(2, 200)
+
+et puis on ajoute (1, 100) elle va etre comme ca
+
+(1, 100)
+(2, 200)
+
+car il fait trier les valeurs de la map selon le clé
