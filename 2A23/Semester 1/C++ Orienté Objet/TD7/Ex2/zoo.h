@@ -16,10 +16,11 @@ class Zoo{
     vector<Animal*>::iterator chercherAnimal(int);
     void ajouterAnimal(const Animal&);
     void ajouterLion(const Lion&);
-    void afficherAnimal();
+    void afficher();
     void ajouterDateVaccin(int, string);
     vector<Veterinaire>::iterator chercherVeterinaire(int);
     void ajouterVeterinaire(const Veterinaire&);
+    void affecterAnimal(const Animal&, const Veterinaire&);
 };
 
 #endif // ZOO_H_INCLUDED

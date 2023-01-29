@@ -15,10 +15,10 @@ class Animal{
     Animal(string, int);
     ~Animal(){};
     vector<string> getD(){return D;};
-    int getMat(){return mat;};
+    int getMat() const {return mat;};
     virtual void afficher();
     vector<string>::iterator chercherDate(string);
-    void ajouterDateVaccin(string);
+    void ajouterDateVaccin(string x) {D.push_back(x);};
 };
 
 #endif // ANIMAL_H_INCLUDED

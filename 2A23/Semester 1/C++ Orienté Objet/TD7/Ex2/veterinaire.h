@@ -12,7 +12,11 @@ class Veterinaire{
     Veterinaire();
     Veterinaire(int, string, string);
     ~Veterinaire(){};
-    int getID(){return id;};
+    int getID() const {return id;};
+    void afficher();
+    vector<int>::iterator chercherAnimal(int);
+    void affecter(int);
+    vector<int> operator+=(const Veterinaire&);
 };
 
 #endif // VETERINAIRE_H_INCLUDED

@@ -37,10 +37,15 @@ void Zoo::ajouterLion(const Lion &x)
         A.push_back(a);
 }
 
-void Zoo::afficherAnimal()
+void Zoo::afficher()
 {
+    cout << "~~~~~~~~ Animals: ~~~~~~~~" << endl;
     for(vector<Animal*>::iterator it=A.begin(); it!=A.end(); it++){
         (*it)->afficher(); cout << endl;
+    }
+    cout << endl << "~~~~~~~~ Doctors: ~~~~~~~~" << endl;
+    for(vector<Veterinaire>::iterator it=V.begin();  it!=V.end(); it++){
+        it->afficher(); cout << endl;
     }
 }
 
@@ -67,8 +72,32 @@ vector<Veterinaire>::iterator Zoo::chercherVeterinaire(int id)
 
 void Zoo::ajouterVeterinaire(const Veterinaire &v)
 {
-    if()
+    vector<Veterinaire>::iterator it = chercherVeterinaire(v.getID());
+    if(it == V.end())
         V.push_back(v);
     else
         cout << "Veterinaire existe deja." << endl;
+}
+
+void Zoo::affecterAnimal(const Animal &a, const Veterinaire &v)
+{
+    try{
+        vector<Animal*>::iterator it = chercherAnimal(a.getMat());
+        if(it != A.end()){
+            try{
+                vector<Veterinaire>::iterator it1 = chercherVeterinaire(v.getID());
+                if(it1 != V.end()){
+                    it1->affecter(a.getMat());
+                }else
+                    throw string("Veterinaire ne existe pas.");
+            }
+            catch(const string &ch){
+                cerr << ch << endl;
+            }
+        }else
+            throw string("Animal ne existe pas.");
+    }
+    catch(const string &ch1){
+        cerr << ch1 << endl;
+    }
 }

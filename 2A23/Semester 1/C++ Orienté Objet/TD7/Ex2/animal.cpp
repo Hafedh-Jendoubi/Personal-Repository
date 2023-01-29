@@ -30,8 +30,3 @@ vector<string>::iterator Animal::chercherDate(string x)
     }
     return D.end();
 }
-
-void Animal::ajouterDateVaccin(string x)
-{
-    D.push_back(x);
-}
