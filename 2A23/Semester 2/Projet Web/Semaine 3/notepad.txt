@@ -1,0 +1,69 @@
+<form id="form"><table>
+                <tr>
+                    <td>
+                        <label for="name">Nom *</label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" placeholder="Nom" minlength="3" pattern="[a-zA-Z]+" required>
+                    </td>
+                    <td>
+                        <p id="err1" style="color: red;"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="last_name">Prénom</label>
+                    </td>
+                    <td>
+                        <input type="text" id="last_name" placeholder="Prénom" minlength="4">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="address">Address</label>
+                    </td>
+                    <td>
+                        <textarea name="address" cols="20" rows="10" placeholder="Address"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="tel">Numéro Téléphone *</label>
+                    </td>
+                    <td>
+                        <input type="text" id="tel" placeholder="Numéro Téléphone" minlength="8" maxlength="8" pattern="[0-9]+" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="birth">date de naissance</label>
+                    </td>
+                    <td>
+                        <input type="date" id="birth">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pass">Mot de passe *</label>
+                    </td>
+                    <td>
+                        <input type="password" id="pass" placeholder="Mot de passe" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pass2">Confirmation mot de passe *</label>
+                    </td>
+                    <td>
+                        <input type="password" id="pass2" placeholder="Confirmation mot de passe" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <input type="submit" id="submit" onclick="passValidation()">
+                    </td>
+                    <td align="left">
+                        <input type="reset" id="reset">
+                    </td>
+                </tr>
+            </table></form>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact Page - Sport Center</title>
+    </head>
+    <body>
+        <header id="mainHeader">
+            <div>
+                <a href="index.html"> Home </a>
+                <a href="#"> Courses </a>
+                <a href="#"> Coach </a>
+                <a href="inscription.html"> Inscription </a>
+            </div>
+            <br />
+            <hr />
+            <br />
+            <img
+                src="assets/img/img1.jpg"
+                alt="salle"
+                width="100%"
+                height="500px"
+            />
+        </header>
+        <br /><br />
+        <hr />
+        <br /><br />
+        <section id="pageContent">
+            <h3>Inscription</h3>
+            <form action="#" method="post">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="fname">First Name <span>*</span></label>
+                        </td>
+                        <td>
+                            <input
+                                type="text"
+                                id="fname"
+                                name="fname"
+                                minlength="3"
+                                required
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="lname">Last Name</label></td>
+                        <td>
+                            <input
+                                type="text"
+                                id="lname"
+                                name="lname"
+                                minlength="3"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="add">Address</label></td>
+                        <td>
+                            <textarea
+                                name="add"
+                                id="add"
+                                cols="20"
+                                rows="7"
+                            ></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="phone"
+                                >Phone Number <span>*</span></label
+                            >
+                        </td>
+                        <td>
+                            <input
+                                type="number"
+                                id="phone"
+                                name="phone"
+                                minlength="8"
+                                required
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="dob">Date of birth</label></td>
+                        <td>
+                            <input type="date" id="dob" name="dob" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="pass">Password <span>*</span></label>
+                        </td>
+                        <td>
+                            <input
+                                type="password"
+                                name="pass"
+                                id="pass"
+                                minlength="8"
+                                required
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="cpass"
+                                >Confirm Password <span>*</span></label
+                            >
+                        </td>
+                        <td>
+                            <input
+                                type="password"
+                                name="cpass"
+                                id="cpass"
+                                minlength="8"
+                                required
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+
+        <br />
+        <hr />
+        <br />
+        <footer>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <h2>Contact Us</h2>
+
+                        <a href="mailto:esprit@esprit.tn"
+                            >email : esprit@esprit.tn</a
+                        >
+                    </td>
+                    <td align="right">
+                        <address>NoWhere Street</address>
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </body>
+</html>

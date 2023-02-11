@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+    </head>
+    <body>
+        <header>
+            <h2>Test Website</h2>
+        </header>
+
+        <p>You can check the Console using inspect</p>
+        <script>
+            console.log("Exercice 1:");
+            var arr1 = [5];
+            var arr2 = Array (5);
+            var arr3 = Array (6);
+            var arr4 = Array.of(5);
+
+            console.log(arr1);
+            console.log(arr2);
+            console.log(arr3);
+            console.log(arr4);
+
+            console.log("");
+
+            console.log("Exercice 2:");
+            var arr = [];
+            arr[0] = "Un";
+            arr[1] = 2;
+            arr[2] = 3.14;
+
+            console.log(arr);
+            console.log(arr[0]);
+            console.log(arr["length"]);
+            arr.length = 0;
+            console.log(arr);
+            arr.length = 3;
+            console.log(arr);
+
+            console.log("");
+
+            console.log("Exercice 3:");
+            var arr = [];
+            arr[0] = "Un";
+            arr[1] = 2;
+            arr[2] = 3.14;
+
+            for(var i = 0; i < arr.length; i++){
+                console.log(arr[i]);
+            }
+
+            arr.forEach(function(nb){
+                console.log('nb: ' + nb);
+            });
+
+            arr.forEach(nb => console.log('nb: ' + nb));
+
+            console.log("");
+
+            var name;
+            function greetings(name)
+            {
+                return("Welcome " + name + "!");
+            }
+            console.log(greetings("Jendoubi"));
+
+            console.log("");
+
+            var a = function(){
+                alert('Hello');
+            }
+
+            console.log(a());
+
+            const sayHello = (hello) => hello.toUpperCase()
+
+            console.log(sayHello('Bonjour'))
+        </script>
+
+        <footer>
+            <p>Contact us</p>
+        </footer>
+    </body>
+</html>

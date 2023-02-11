@@ -1,0 +1,125 @@
+MPASM  5.35                           EX0.ASM   2-1-2023  12:35:41         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002         LIST      P=16F84            ; Définition de processeur
+                      00003         #INCLUDE <P16F84.INC>        ; Définitions de variables
+                      00001         LIST
+                      00002 ; P16F84.INC  Standard Header File, Version 2.00    Microchip Technology, Inc.
+                      00136         LIST
+                      00004 
+2007   0002           00005         __CONFIG   _CP_ON & _WDT_OFF & _PWRTE_ON & _HS_OSC
+                      00006 
+                      00007 
+Warning[205]: Found directive in column 1. (ORG)
+                      00008 ORG 0X0005
+                      00009 
+Warning[203]: Found opcode in column 1. (BSF)
+0005   1683           00010 BSF STATUS,RP0
+Warning[203]: Found opcode in column 1. (BSF)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0006   1405           00011 BSF TRISA,0
+Warning[203]: Found opcode in column 1. (BCF)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0007   1006           00012 BCF TRISB,0
+                      00013 
+Warning[203]: Found opcode in column 1. (BCF)
+0008   1283           00014 BCF STATUS,RP0
+Warning[203]: Found opcode in column 1. (BCF)
+0009   1006           00015 BCF PORTB,0
+                      00016 
+000A   1C05           00017 TEST BTFSS PORTA,0
+000B   2???           00018      GOTO OFF
+000C   2???           00019      GOTO ON
+                      00020 
+000D   1406           00021 ON BSF PORTB,0
+000E   2???           00022    GOTO TEST
+                      00023 
+000F   1006           00024 OFF BCF PORTB,0
+0010   2???           00025    GOTO TEST
+                      00026 
+Warning[205]: Found directive in column 1. (END)
+0002                  00027 END
+MPASM  5.35                           EX0.ASM   2-1-2023  12:35:41         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+C                                 00000000
+DC                                00000001
+EEADR                             00000009
+EECON1                            00000088
+EECON2                            00000089
+EEDATA                            00000008
+EEIE                              00000006
+EEIF                              00000004
+F                                 00000001
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+NOT_PD                            00000003
+NOT_RBPU                          00000007
+NOT_TO                            00000004
+OFF                               0000000F
+ON                                0000000D
+OPTION_REG                        00000081
+PCL                               00000002
+PCLATH                            0000000A
+PORTA                             00000005
+PORTB                             00000006
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RBIE                              00000003
+RBIF                              00000000
+RD                                00000000
+RP0                               00000005
+RP1                               00000006
+STATUS                            00000003
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+TEST                              0000000A
+TMR0                              00000001
+TRISA                             00000085
+TRISB                             00000086
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_CP_OFF                           00003FFF
+_CP_ON                            0000000F
+_HS_OSC                           00003FFE
+MPASM  5.35                           EX0.ASM   2-1-2023  12:35:41         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_LP_OSC                           00003FFC
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84                           00000001
+__DEBUG                           1
+
+Errors   :     0
+Warnings :     7 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+

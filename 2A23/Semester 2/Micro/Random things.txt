@@ -1,0 +1,5 @@
+BSF set valeur to 1
+BCF set valeur to 0
+
+Si input set to 1
+Si output set to 0
