@@ -1,0 +1,23 @@
+<center>
+    {% if nameAuthor == "Victor Hugo" %}
+        <img src="{{ asset('pictures/Victor.jpg') }}" alt="Victor Hugo" height="500px" width="500px" style="border-radius: 20px">
+    {% elseif nameAuthor == "William Shakespeare" %}
+        <img src="{{ asset('pictures/William.jpg') }}" alt="William Shakespeare" height="500px" width="500px" style="border-radius: 20px">
+    {% else %}
+        <img src="{{ asset('pictures/Taha.jpg') }}" alt="Taha Hussein" height="500px" width="500px" style="border-radius: 20px">
+    {% endif %}
+    <table style="margin-top: 50px;">
+        <tr>
+            <td width="200px"><b>Author</b></td>
+            <td>{{ nameAuthor }}</td>
+        </tr>
+        <tr>
+            <td><b>Email</b></td>
+            <td>{{ email }}</td>
+        </tr>
+        <tr>
+            <td><b>Number Books</b></td>
+            <td>{{ nbBooks }}</td>
+        </tr>
+    </table>
+</center>

@@ -1,0 +1,40 @@
+<h1>Books list:</h1>
+{% set nb_books_published = 0 %}
+{% set nb_books_not_published = 0 %}
+<center>
+<table border="2">
+    <tr>
+        <th>Réference</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Author</th>
+        <th>Publication Date</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    {% for i in tabBooks %}
+        {% if i.published == true %}
+            {% set nb_books_published = nb_books_published + 1 %}
+            <tr>
+                <td>{{ i.ref }}</td>
+                <td>{{ i.title }}</td>
+                <td>{{ i.category }}</td>
+                <td>{{ i.author }}</td>
+                <td>{{ i.datePublication | date("Y-m-d") }}</td>
+                {% if i.published == 1 %}
+                    <td>Published</td>
+                {% else %}
+                    <td>Not Published</td>
+                {% endif %}
+                <td><a href="{{ path('delete_book', {ref: i.ref}) }}">Delete</a>
+                    <a href="{{ path('update_book', {ref: i.ref}) }}">Edit</a>
+                    <a href="{{ path('show_book', {ref: i.ref}) }}">Show</a></td>
+            </tr>
+        {% else %}
+            {% set nb_books_not_published = nb_books_not_published + 1 %}
+        {% endif %}
+    {% endfor %}
+</table>
+<h2>Number of books published: {{ nb_books_published }}</h2>
+<h2>Number of books not published: </h2>
+</center>

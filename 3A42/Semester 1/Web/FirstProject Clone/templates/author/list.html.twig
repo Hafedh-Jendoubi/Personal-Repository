@@ -1,0 +1,28 @@
+<h1>Authors list:</h1>
+{% set x = 0 %}
+{% if tabAuthors is empty %}
+<p style="color:red">Tableau est vide</p>
+{% else %}
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Number of Books</th>
+        <th>Action</th>
+    </tr>
+    {% for i in tabAuthors %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.username | upper }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.nb_books }}</td>
+            <td><a href="{{ path('show_Author', { 'username': i.username, 'email': i.email, 'nbBooks': i.nb_books }) }}">Details</a></td>
+            {% set x = x + i.nb_books %}
+        </tr>
+    {% endfor %}
+</table><br>
+{% endif %}
+<b>Number of authors:</b> {{ tabAuthors | length }}<br>
+<b>Number of books:</b> {{ x }}
+<img src="" alt="">

@@ -1,0 +1,2 @@
+Lien physique: ln <source> <destination>
+Lien symbolique: ln -s  <source> <destination>

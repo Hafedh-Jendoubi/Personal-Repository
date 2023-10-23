@@ -1,0 +1,24 @@
+1/ 
+gedit Unix/exercice2 &
+cat dataTD1.1.txt > ~/Unix/exercice2
+
+2/
+cat  ~/Unix/exercice2
+
+3/
+cut -d: -f 1,2 ~/Unix/exercice2
+
+4/
+grep ^S ~Unix/exercice2 | cut -d: -f 1
+
+5/
+grep Mohamed ~/Unix/exercice2 | wc -l
+
+6/
+head -n 7 ~/Unix/exercice2 | tail -n 2
+
+7/
+sort ~/Unix/exercice2
+
+8/
+sort -t: -k3 -n ~/Unix/exercice2 > Rapport
