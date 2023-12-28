@@ -1,0 +1,53 @@
+Set is an interface that inherits from Collection interface: Set n'accepte pas la présence de doublons.
+
+The elements of TreeSet are triés, insertion of new element is slow.
+The elements of HashhSet are not triés, insertion is fast.
+
+HashSset:
+
+equals() and hashCode() redefinition is required because doublons aren't accepted here.
+
+Redifinition example of hashCode()
+@Override
+public int hashCode(){
+	int result = 17;
+	result = 31 * result + id;
+	result = 31 * result + name.hashCode(); // <--- this hashCode() redéfinie dans String
+	return result;
+}
+
+
+TreeSet:
+
+Il faut implémenter l'interface Comparable ou Comparator. Without these interfaces ClassCastException déclenche.
+
+You can either declare a HashSet then declare a TreeSet and add that HashSet inside that TreeSet:
+
+Set<String> has = new HashSet<>();
+hash.add("");
+.
+.
+
+TreeSet treeset = new TreeSet<>(hash);
+sout(treeset);
+
+
+or you can do this:
+
+Comparator<Student> comparator = new Comparator<Student>(){
+	@Override
+	public int compare(Student o1, Student o2){
+		//tri coissant selon l'id
+		return o1.d - o2.id;
+	}
+}
+
+Set<Student> tree = new TreeSet<>(comparator);
+tree.add(new Student(2, "Sami");
+tree.add(new Student(1, "Marwa");
+tree.add(new Student(3, "Ali");
+
+sout("La listre triée est: "); sout(tree);
+
+
+
