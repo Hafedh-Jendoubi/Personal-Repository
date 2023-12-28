@@ -1,0 +1,16 @@
+Exemple:
+
+172.16.0.0 / 22 (22 is the mask)
+
+2^N >= Nbr de sous-réseaux (=9 "donnée)
+
+2^3 = 8 < 9
+2^4 = 16 > 9 ===> N = 4
+
+    Partie Sous-Réseau (22 + 4 = 26 bits)
+<------------------------>|
+172 . 16 . 0000 00 | 00 00| 00 0000 (On a stoppé there | car on a 22 bits, 172 got 8 bits the same for 16 and we got 0000 00 = 6 bits, 8 + 8 + 6 = 22 bits)
+<---------------->   <------------>
+  Partie Réseau       Partie Hote ( 8*4 - 22 = 10bits )
+
+Nbr Hots = 2^6 - 2 = 62 Hots

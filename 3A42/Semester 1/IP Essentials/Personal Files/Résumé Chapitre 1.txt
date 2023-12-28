@@ -1,0 +1,86 @@
+1/ a) Les protocoles de la couche réseau (IPv4 et IPv6):
+
+- La couche réseau:
+La couche réseau permet aux périphériques finaux d'échanger des données sur le réseau
+Pour effectuer ce transport de bout en bout, elle utilise 4 processus:
+* L'adressage des périphériques finaux
+* L'encapsulation
+* Le routage
+* La désencapsulation
+
+- Les protocoles de la couche réseau:
+Les protocoles qui sont généralement mis en oeuvre sont IPv4 & IPv6
+
+- Caractéristiques de la couche réseau:
+Encapsulation:
+	Ajout de en-tête IP au niveau de la couche réseau sans affecter les autres couches et utilisent l'en-tête de paquet de couche réseau pour le routage.
+IP est un protocole:
+	* sans connexion
+	* de remise au mieux (best effort)
+	* indépendant du support
+
+- Structure de Entête IPv4 (Diapot 12 Chapitre 1)
+
+
+    b) Structure d’une adresse IPv4
+
+Une adresse IPv4 est composée d'une partie Réseau et d'une partie Hôte.
+Le masque de sous-réseau permet d’identifier la partie réseau et la partie hôte au niveau d’une adresse IPv4.
+
+Le masque sous-réseaux:
+Un 1 dans le masque de sous-réseau indiqueque le bit correspondant dans l'adresse IPv4 est un bit de réseau.
+Exemple:
+Adresse IPv4: 192 . 168 . 10 . 10 ----> 11000000 . 10101000 . 00001010 . 00001010
+Masque:       255 . 255 . 255 . 0 ----> 11111111 . 11111111 . 11111111 . 00000000
+					<----------------------------> | <------>
+						Partie Réseau             Partie Hote
+
+Longeur de préfixe: (Voir diapot 23 pour exemples)
+La longueur de préfixe correspond au nombre de bits définis sur 1 dans le masque de sous-réseau.
+Elle est notée au moyen de la « notation de barre oblique », soit le signe « / ».
+
+La longueur de préfixe
+correspond au nombre de bits
+définis sur 1 dans le masque de
+sous-réseau.
+
+Un périphérique appartient à ce réseau s'il répond à trois critères:
+	* Il a le même masque
+	* Il a les mêmes bits réseau que l'adresse réseau
+	* Il est situé sur le même domaine de diffusion que les autres hôtes
+
+Net-id: permet de déterminer à quel réseau appartient l'adresse. On détermine le net id d'une adresse à l'aide d'une opération appelée ET Logique
+
+Host-id: d'identifier la machine dans un réseau. Le host id se calcule également grâce au ET logique qui permet d'obtenir le net id.
+
+Adresse Hôte: Les adresses hôtes sont des adresses qui peuvent être affectées à un périphérique. (Voir diapot 27)
+
+Adresse de diffusion: Une adresse de diffusion est une adresse qui est utilisée lorsqu'elle est nécessaire pour atteindre tous les périphériques du réseau IPv4.
+
+Attribution d'une adresse IPv4: Statique (Manuellement) et Dynamique en utilisant le protocole DHCP (Dynamic Host Configuration Protocol)
+
+Monodiffusion: Envoyer un paquet d'un hôte à un autre <<Unicast>>
+Multidiffusion: //     //   //    //   //  à un groupe d'hôtes <<Multicast>>
+Broadcast:      //     //   //    //   //  à tous les autres hôtes du réseau
+
+Type d'adresses IPv4:
+	Les adresses publiques: Sont acheminées globalement entre les routeurs des FAI (fournisseurs d'accès à Internet)
+	Les adresses privées: ne sont pas uniques et peuvent être utilisées par n'importe quel réseau interne. Ces adresses ne sont pas routables sur le réseau Internet.
+	Les adresses IPv4 privées son définies dans RFC 1918. (Voir diapot 35)
+	Les adresses IPv4 spécifiques:
+		* Adresses de bouclage
+		* Adresses Link-Local
+		* Adresses TEST-NET
+
+Système d'adressage par classe: (Voir diapots 38 - 39 - 40 pour mieux comprendre)
+	Classe A (0 -> 127) : 
+		Nombre de réseaux: 2^7 = 128 réseaux.
+		Nombre d'hôtes: 2^24 - 2 = 16 777 214 hôtes.
+
+	Classe B (128 -> 191) :
+		Nombre de réseaux: 2^14 = 16 384 réseaux.
+		Nombre d'hôtes: 2^16 - 2 = 65 534 hôtes.
+
+	Classe C (192 -> 223) :
+		Nombre de réseaux: 2^21 = 2 097 152 réseaux.
+		Nombre d'hôtes: 2^8 - 2 = 254 hôtes.
