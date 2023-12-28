@@ -1,0 +1,236 @@
+#!/bin/bash    # shebang: doit figurer dans la première ligne du script pour specifier l'interpréteur de commande utilisé pour exécuter ce script, sinon le shell par défaut sera utilisé
+
+# Ceci est un commentaire
+
+# Voici un commentaire multiligne :
+: <<COMMENT
+Ce commentaire s'étend sur plusieurs lignes.
+Il peut contenir du texte explicatif ou des informations importantes.
+Tout ce qui se trouve entre les balises COMMENT n'est pas exécuté par le script.
+COMMENT
+
+# Affichage d'un message
+echo "ceci est notre premier script"
+echo "Mon nom est Jhon"
+echo 'Mon âge est 30 ans'
+
+##########Utilisation des Variables###############
+
+# Déclaration des variables manuellement
+nom="John"
+age=30
+echo "Mon nom est $nom" 
+echo 'Mon âge est $age ans'         # Avec les simple quotes, le contenu de la variable n'est pas interprétée, elle est considérée comme une chaîne de caractères
+
+# Saisie des variables par le clavier (entrée standard)
+read -p "Entrez votre nom : " nom   # On peut saisir plusieurs variables simultanément, par exemple: read nom age
+# Utilisation de la valeur saisie
+echo "Mon nom est $nom"
+
+# Exemple d'utilisation de backquotes: pour exécuter ce qui se trouve à l'intérieur d'une variable
+# Les backquotes peuvent être remplacés par $( )
+nom=`whoami`                        #whoami est une commande shell qui affiche le nom de l'user connecté
+echo "Mon nom est $nom"
+
+# Utilisation des variables d'environnement dont la liste est affichée via la commande env
+echo "Mon nom est $USER"           #On peut utiliser la varibale LOGNAME
+# Création d'une nouvelle variable d'environnement
+export NAME
+NAME=`whoami`                      #ou  NAME=$(whoami)
+env | grep NAME                    #Pour vérifier l'existence de cette nouvelle variable d'environnement
+
+# Variables spéciales ou variables de paramètres
+# A ce niveau on va exécuter notre script avec des arguments, comme suit
+
+#./FirstScript esprit 20
+
+echo "Le nom du script en cours est : $0"
+echo "Le premier argument est : $1"
+echo "Le deuxième argument est : $2"
+echo "Le nombre d'arguments du script est : $#"
+echo "La liste des arguments du script est : $*"
+echo "Le code de retour de la dernière commande est : $?"
+
+##########Les opérations mathématiques###############
+
+nombre=0
+resultat_addition=$((nombre + 10))
+resultat_soustraction=`expr $nombre - 5`  #expr est une commande shell qui remplace $((  )) et utilisée pour faire des opérations arithmétiques
+resultat_multiplication=$((nombre * 2))
+resultat_division=$((nombre / 3))
+
+echo "Résultats des opérations mathématiques :"
+echo "Nombre + 10 = $resultat_addition"
+echo "Nombre - 5 = $resultat_soustraction"
+echo "Nombre * 2 = $resultat_multiplication"
+echo "Nombre / 3 = $resultat_division"
+ 
+##########Structures conditionnelles###############
+
+#####if#####
+
+###Tests sur les fichiers
+
+# Teste si un fichier existe
+fichier="exemple.txt"                    #On peut utiliser d'autres options (-f,-d,-a,-r,-w,-x,-L) pour faire d'autres tests sur les fichiers
+if [ -e "$fichier" ]; then  
+       echo "Le fichier '$fichier' existe"
+else
+       echo  "Le fichier '$fichier' n'existe pas"
+fi
+#la comamnde test remplace [ ] et permet de faire des tests, ci dessous une autre syntaxe en utilisant la commande test
+if test -e "$fichier"; then
+    : # Le fichier '$fichier' existe.
+else
+    : # Le fichier '$fichier' n'existe pas.
+fi
+###Combinaison des conditions
+# Teste si un fichier est un fichier ordinaire et s'il est modifiable
+#if [ -f "$fichier" ] && [ -w "$fichier" ]; then 
+# ou bien la syntaxe suivante 
+#if [ -f "$fichier" -a -w "$fichier" ]; then
+
+# Teste si un fichier est exécutable ou modifiable
+#if [ -x "$fichier" -o -w "$fichier" ]; then
+#ou ou bien la syntaxe suivante 
+#if [ -x "$fichier" ] || [ -w "$fichier" ]; then
+
+# Teste si un fichier est un fichier régulier
+#if [ -f "$fichier" ]; then
+
+# Teste si un fichier est un répertoire
+#if [ -d "$fichier" ]; then
+
+# Teste si un fichier n'est pas un répertoire  #! est un opérateur de négation
+#if [ !-d "$fichier" ]; then 
+
+# Teste si un fichier est un lien symbolique
+#if [ -L "$fichier" ]; then 
+
+# Teste si un fichier est lisible 
+#if [ -r "$fichier" ]; then     
+
+# Teste si un fichier est exécutable 
+#if [ -x "$fichier" ]; then  
+
+# Teste si un fichier est modifiable en écriture 
+#if [ -w "$fichier" ]; then
+    
+# Teste si un fichier a une taille non nulle
+#if [ -s "$fichier" ]; then 
+    
+###Testes sur les nombres
+nombre1=10
+nombre2=20
+
+# Teste si un nombre est égal à un autre nombre  #On peut utiliser d'autres options (-lt,-le,-gt,-ge) pour faire d'autres tests sur les nombres,
+if [ "$nombre1" -eq "$nombre2" ]; then
+    echo "$nombre1 est égal à $nombre2"
+else
+    echo "$nombre1 n'est pas égal à $nombre2"
+fi
+
+###Tests sur les chaînes de caractères
+chaine1="Hello"
+chaine2="World"
+
+# Teste si une chaîne de caractères est égale à une autre chaîne
+if [ "$chaine1" = "$chaine2" ]; then
+    echo "Les chaînes sont égales."
+else
+    echo "Les chaînes ne sont pas égales."
+fi
+
+# Teste si une chaîne de caractères n'est pas égale à une autre chaîne
+#if [ "$chaine1" != "$chaine2" ]; then
+
+# Teste si une chaîne de caractères est vide
+chaine_vide=""
+if [ -z "$chaine_vide" ]; then
+    echo "La chaîne de caractères est vide."
+fi
+
+# Teste si une chaîne de caractères n'est pas vide
+chaine_non_vide="Bonjour"
+if [ -n "$chaine_non_vide" ]; then
+    echo "La chaîne de caractères n'est pas vide."
+fi
+
+#####case#####
+echo "Choisissez une option :"
+echo "1. Afficher la date"
+echo "2. Afficher le répertoire courant"
+echo "3. Quitter"
+
+read choix
+case $choix in
+    1)
+        date
+        ;;
+    2)
+        pwd
+        ;;
+    3)
+        echo "Au revoir !"
+        ;;
+    *)
+        echo "Option invalide"
+        ;;
+esac
+
+##########Structures itératives###############
+
+#####Boucle for#####
+for i in {1..15}; do
+  echo "Répétition $i"
+done
+
+#ou bien la syntaxe suivante 
+for i in $(seq 15); do      #La commande seq génère une suite de nombres selon les arguments donnés à cette commande, au dessous quelques exemples
+  echo "Répétition $i"
+done
+
+# seq -2  1     génère une sequence de -2 à 1 avec un incrément de 1
+# seq  1 2 10   génère une sequence de 1 à 10 avec un  incrément de 2
+
+#####Boucle while#####
+nombre=1
+while [ $nombre -le 10 ]; do
+    echo $nombre
+    nombre=$((nombre + 1))     #ou  aussi ((nombre++))
+done
+
+##########Déclaration Fonction###############
+function dire_bonjour() {
+ nom=$1
+echo "Bonjour, $nom !"
+}
+dire_bonjour "Esprit"
+
+###############Manipulation des tableaux###############
+
+# Déclaration d'un tableau
+etudiants=("Mohamed" "Bilel" "Cyrine" "Mariem")
+
+# Affichage de tous les éléments du tableau
+echo "Liste des etudiants: ${etudiants[@]}"    #@ peut être remaplcée par *
+
+# Accès à un élément spécifique du tableau
+echo "Le premier etudiant: ${etudiants[0]}"
+echo "Le deuxième etudiant : ${etudiants[1]}"
+
+# Ajout d'un élément au tableau
+etudiants+=("Firas")
+
+# Affichage du tableau mis à jour
+echo "Liste des etudiants mise à jour : ${etudiants[@]}"
+
+# Parcours de tous les éléments du tableau
+echo "Parcours de la liste des etudiants:"
+for etudiant in "${etudiants[@]}"; do
+    echo " - $etudiant"
+done
+
+# Longueur du tableau
+nombre_des_etudiants="${#etudiants[@]}"
+echo "Nombre total de etudiants : $nombre_des_etudiants"

@@ -1,0 +1,16 @@
+Module:                             Enseignant:          Niveau
+Système et Réseau:                   Mohamed:              1
+Administration Système Unix:         Salah:                3
+Système et scripting:                Salah:                2
+Techniques de Conteneurisation:      Mohamed:              4
+Cloud et sécurité:                   Fatma:                5
+Fondements des réseaux:              Ahmed:                2
+Initiation au cloud:                 Fatma:                4
+Mathématiques:                       Hedi:                 1
+Switched networks:                   Asma:                 3
+Livraison continue:                  Amine:                5
+IP Net Routing:                      Asma:                 3
+Sécurité informatique:               Rim:                  4
+Réseaux de communication:            Ahmed:                2
+Algorithmique:                       Ali:                  1
+Programmation C:                     Mohamed:              1
