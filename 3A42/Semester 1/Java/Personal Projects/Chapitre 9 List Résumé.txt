@@ -1,0 +1,60 @@
+	List is an interface that inherits from Collection interface: List accepte la présence de doublons.
+
+Always List in the beginning of declaration like down below:
+List myArrayList = new ArrayList(); //Arraylist is a table, that it size can be changed.
+List myVector = new Vector(); //Same princip, but this is slower.
+
+To display a list you use sout(), toString redefinition is required.
+To search, delete.. A redefinition of equals(Object obj) is required.
+
+Collections is a class that has other features to use for Collection subclasses.
+Example: Collections.sort(List l);
+The method sort() needs to implement !!Comparable!! interface.
+Like:
+public class Personne implements Comparable<Personne>{
+	private String nom;
+	private int age;
+		.
+		.
+	//This one needs redifintion:
+	public int compareTo(Personne autre){
+		return this.age - autre.age;
+	}
+
+	@Override
+	public String toString(){..}
+}
+
+To add a second option for tri, like if the ages are equal we add compare() method
+from the !!Comparator!! interface
+We declare a new class:
+class PersonneNomCompartor implements Comparator<Personne>{
+	@Override
+	public int compare(Personne p1, Personne p2){
+		return p1.getNom().compareTo(p2.getNom());
+	}
+}
+and we do: Collections.sort(personnes, new PersonneNomComparator());
+						^
+     "We add an attribute in sort() method" ----|
+
+Les interfaces fonctionnelles are interfaces who have just 1 method using @FunctionalInterface
+
+Comparator<Personne> nomCompartor = new Compartor<Personne>(){
+	@Override
+	public int compare(Personne p1, Personne p2){
+		return p1.getNom().compareTo(p2.getNom());
+	}
+}
+Collections.sort(personnes, nomCompartor);
+
+if we have another compartor like ageCompartor we can use:
+
+Collections.sort(personnes, ageComparator.thenComparing(nomCompartor));
+
+
+Compartor allow you to compare using many Compartors using the thenComparing()
+and Comparable just one way of comparaison:
+Comparable <-----------> compareTo() in the main class
+Comparator <-----------> compare() object
+"Gamerha Compartor, feha eka el "to" donc el method mte3ha me fihesh To() w a3kes :)"

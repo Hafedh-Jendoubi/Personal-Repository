@@ -1,0 +1,58 @@
+Les differents modes of CLI switch
+
+//Mode User, known by "Switch>"
+Switch> enable    //Pour go to mode exec-privilege known by "switch#"
+switch# ping //Exp1 of commands
+	show //Exp2 of commands
+	config t //To go to mmode config global known by "Switch(config)#"
+Switch(config)# hostname S1 //To give the switch a name
+		line con 0 //To switch to sous-mode conf
+Switch(Config-line)
+
+
+DNS: yarbet le nom de domain bel adress ip
+exp: Google.com <---> 45.43.24.4
+
+Desactiver la recherche DNS: //Why? Pour éviter la perturbation et ywa9fek barcha ken toghlot, ken toghlet fi cmd yafdh7ek! il fait diffusion d'une façon continue
+S1(config)# no ip domain-lookup
+
+Message de bannière: //C'est un message d'avertissement, exemple, don't touch configuration
+S1(config)# banner motd #don't touch!!!# //If you open the comment with "#" you should close it with "#", you can also do
+S1(config)# banner motd +don't touch!!!+
+
+end //command to go back to privilege mod
+exit //to leave the CLI
+
+Pour protéger from another one from using enable do:	
+S1>en //Same as enable
+S1#config t 
+S1(config)#enable secret class //class c'est le password
+
+
+Pour protéger from another one from using the CLI, before even the user mod:
+
+S1>en
+Password: 
+S1#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+S1(config)#line con 0 //This to protect the CLI from another Computer (El console, kif yebda terminal men pc ekhor)
+S1(config-line)#password cisco
+S1(config-line)#login
+S1(config-line)#exit
+S1(config)#line vty 0 15 //This to protect the CLI from the virtual ports (El virtuel, kif yebda terminal mel Switch)
+S1(config-line)#password cisco
+S1(config-line)#login
+S1(config-line)#
+
+Not crypted, to encrypt them:
+
+S1#config t
+S1(config)#service password-encryption
+
+S1#copy running-config startup-config
+// running-config	file configoration en cours (RAM)
+// startup-config	file configuration initial (NVRAM)
+
+
+
+Switch is composé of @Mac <---> N°Port ou bien Interface, meme chose

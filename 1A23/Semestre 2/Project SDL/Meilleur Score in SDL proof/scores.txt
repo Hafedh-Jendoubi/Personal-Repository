@@ -1,3 +1,6 @@
 Name: hafedh  Score: 200
 Name: aabsou  Score: 150
 Name: seif  Score: 120
+Name: 3  Score: 4
+Name: 3  Score: 5
+Name: 2  Score: 4

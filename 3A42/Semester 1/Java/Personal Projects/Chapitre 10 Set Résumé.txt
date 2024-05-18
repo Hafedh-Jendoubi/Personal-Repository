@@ -1,0 +1,53 @@
+Set is an interface that inherits from Collection interface: Set n'accepte pas la présence de doublons.
+
+Always Set in the beginning of declaration like down below:
+Set monTreeSet = new TreeSet(); //TreeSet elements are triés, insertion of new element is slow.
+Set monHashSet = new HashSet(); //HashhSet fast insertion, Ordre changed randomly
+Set monLinkedHashSet = new LinkedHashSet(); //LinkedHashSet elements order remain
+
+HashSet:
+equals() and hashCode() redefinition is required because doublons aren't accepted here.
+It won't cause an exception tho', but it might accept the doublons if we don't do it.
+
+Redifinition example of hashCode()
+@Override
+public int hashCode(){
+	int result = 17;
+	result = 31 * result + id;
+	result = 31 * result + name.hashCode(); // <--- this hashCode() redéfinie dans String
+	return result;
+}
+
+
+TreeSet:
+Il faut implémenter l'interface Comparable ou Comparator. Without these interfaces ClassCastException déclenche.
+
+- You can use this method down below, sort an existed HashSet already, constructeur de recopie.
+
+Set<String> has = new HashSet<>();
+hash.add("");
+.
+.
+
+TreeSet treeset = new TreeSet<>(hash);
+sout(treeset);
+
+
+- or you can do this, using the Comparator.
+
+Comparator<Student> comparator = new Comparator<Student>(){
+	@Override
+	public int compare(Student o1, Student o2){
+		//tri coissant selon l'id
+		return o1.d - o2.id;
+	}
+}
+Set<Student> tree = new TreeSet<>(comparator);
+tree.add(new Student(2, "Sami");
+tree.add(new Student(1, "Marwa");
+tree.add(new Student(3, "Ali");
+sout("La listre triée est: ");
+sout(tree);
+
+
+

@@ -1,0 +1,57 @@
+Une map est une structure qui associe une clé (Key) à une valeur (Value) ( Map<K,V> )
+Exemple Map: [key = “chien”, value = “bark”] [key = “chat”, value = “meow”]
+
+L'interface Map contient une interface interne Map.Entry<K, V>, elle définit 3 methodes:
+	- V getValue()
+	- K getKey()
+	- V setValue(V value)
+La méthode entrySet() de Map renvoie un objet de type Set<Map.Entry<K, V>>
+
+
+- HashMap:
+* Permet "null" d'être clé ou valeur
+* Elle ne garantit pas l'ordre lors du parcours des élements
+
+Methods:
+	Declaration: Map<String, Integer> studentScores = new HashMap<>();
+	Insert: studentScores.put("Hafedh", 16);
+	Get Value: studentScores.get("Hafedh"); //returns value
+	Check if key exists: studentScores.containsKey("Hafedh"); //returns true
+	Deleete: studentScores.remove("Hafedh");
+	Display: sout(studentScores);
+	Looping and displaying keys:
+		Set<String> keys = studentScores.keySet();
+		Iterator<String> iterator = keys.iterator();
+		while (iterator.hasNext()) {
+		System.out.println("Key: " + iterator.next());
+	Looping and displaying values:
+		Collection<Integer> values = studentScores.values();
+		for (Integeer value : values){
+			sout(value);
+		}
+	Looping and displaying Both:
+		for (Map.Entry<String, Integer> entry : studentScores.entrySet()){
+			System.out.println(entry.getKey() + ": " + entry.getValue());
+		}
+
+
+TreeMap:
+* Les éléments de la collection sont triés selon leurs clés (Comparable redifinition needed)
+
+// Comparator for sorting by length of students names
+Comparator<String> nameLengthComparator = new Comparator<String>() {
+	@Override
+	public int compare(String o1, String o2) {
+		return o1.length() - o2.length();
+	}
+};
+// Comparator for sorting Alphabetically
+Comparator<String> alphabeticComparator = new Comparator<String>() {
+	@Override
+	public int compare(String o1, String o2) {
+		return o1.compareTo(o2);
+	}
+};
+// Creating a TreeMap with a combined comparator (first by length, then Alphabetically)
+Map<String, Integer> studentScores = new
+TreeMap<>(nameLengthComparator.thenComparing(alphabeticComparator));

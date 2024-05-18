@@ -1,0 +1,96 @@
+Calcul Notes:
+
+import numpy as np
+'numpy': Bibliotheque pour manipuler les matrices et vecteurs
+
+A = np.array([[1, 2, 2], [], ..]) #déclarer matrice    A  =>   |   (1, 2, 2)   |
+					      		       |   ( ,  ,  )   |
+		     					       |      ..       |
+							       |   ( ,  ,  )   |		
+print(A) #pour afficher matrice
+
+np.shape(A) #Afficher dimension de A
+
+#Afficher num exacte:
+print(A[ligne][colonne]) #on commence par 0
+
+#A[:,n:m] <=> A[:][n:m] est une sous matrice de  𝐴  avec : represente toutes les lignes et n:m represente les #colonnes de  𝑛 à  𝑚−1.
+
+B = A.copy() #Créer copie d'une matrice
+
+A[3,:] = [1, 1, 1] #Changer la valeur de la 4eme ligne:
+
+# the ':' makes it easier, once you forget it read it again, think about it as an iterative
+
+A.dot(V) # A*V
+A**2 # A^2
+
+np.diag(A) #diagonal de A
+np.diag(A, -1) #1er sous-diagonal
+np.diag(A, 1) #1er sur-diagonal
+np.diag(A, 2) #2eme sur-diagonal
+
+np.tril(A) #Triangulaire inférieur, l = lower
+np.triu(A) # //          supérieur, u = upper
+
+A.transpose() #Transpose de A
+
+C = np.diagflat([-2, 1, 2]) #creer C a un diagonal -2, 1 et 2 avec les autres valeurs 0
+C = np.diagflat(np.ones(3), 1) #C contient un surdiagonal constitué de 1 pos diag+"1"
+
+--------------------------------------------------
+
+###   Les Matrices Particulières      ###
+
+np.identity(2) #Matrice identité de valeur 2x2: ([[1,0], [0,1]])
+
+np.zeros((3,2), int) #Matrice nulle 3 lignes * 2 colonnes
+np.ones((1,5), float) #Matrice des 1 avec 1 ligne * 5 colonnes [[1, 1, 1, 1, 1]]
+
+A.reshape(n, m) #Transformer une mat de dimension p,k à mat de dim n,m A CONDITION: p*k=n*m
+
+np.linalg.det(A) #Calculer DETERMINANT de A
+np.linalg.inv(A) #CAlculer l'inverse de A, make sure det != 0
+np.linalg.norm(A, 1) #Calculer la norme de A
+
+-----------------
+
+np.arrange(2,8) # array([2, 3, 4, 5, 6, 7])  de 2 -> 8-1 avec pas 1
+np.arrange(4) # array([0, 1, 2, 3])  de 0 -> 4-1 avec pas 1
+np.arrange(n,m,p) #  de n -> m-1 avec pas p
+
+np.linspace(-1, 1, 5) # array([-1., -0.5, 0., 0.5, 1.])  Divise un intervalle [-1, 1] a 5 part
+
+--------------------------------------------------
+
+###   Réprésentations graphiques sous Python      ###
+
+import matplotlib.pyplot as plt
+
+plt.plot([a, b, c]) #Passe par A(0,a) et B(1, b) et C(2, c)
+plt.plot([a, b], [c,d]) #Passe par A(a,c) et B(b,d)
+
+
+x = np.arange(0, 2*np.pi, 0.1) |
+#				| => Dessiner Sin(x)
+plt.plot(x, np.sin(x)) 		|
+
+
+-----------------------------------------------------------
+
+from numpy.polynomial import Polynomial #Bibilotheque des polynomes
+
+P = Polynomial([1, 2, 0, 3])  # P(x) = 1 + 2x + 3x^3
+
+-----------------------------------------------------------
+
+import sympy as sp #Bibliotheque des Integrales and Dérivées
+
+#Read Introduction in TP3 to understand more
+
+x = sp.symbols('x') #Le symbol variable est x
+f=lambda x:x #Function f(x) = x
+sp.Lambda(x, sp.diff(f(x), x)) #Dérivée
+sp.integrate(f(x), x) #Primitive
+sp.integrate(f(x), (x,a,b)) #valeur de l'integral sur interval [a,b]
+sp.integrate(f(x), (x,a,b)).evalf() #Pour la valeur numérique de l'integral

@@ -1,9 +1,0 @@
-1/
-
-* S -> aSa -> a(bSb)a -> ab(a)ba -> ababa
-
-* S -> cSc -> c(bSb)c -> cb(bSb)bc -> cbb(aSa)bbc -> cbba(a)abbc -> cbbaaabbc
-
-* abba NOO!
-
-S -> aSa -> a(cSc)a -> ac(bSb)ca -> acb(a)bca -> acbabca

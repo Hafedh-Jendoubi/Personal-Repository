@@ -1,0 +1,25 @@
+					1/ Ajouter courrier
+Module 1: Gestion  Courriers --> 	2/ Modifier courrier
+					3/ Supprimer courrier
+					4/ Acceder courrier
+
+					1/ Ajouter doc
+Module 2: Gestion  Documents --> 	2/ Modifier doc
+					3/ Supprimer doc
+					4/ Acceder doc
+
+					1/ Creer Compte
+Module 3: Gestion Comptes --> 		2/ Modifier compte
+					3/ Supprimer compte
+
+					1/ Acceder stat
+Module 4: Gestion Statistiques -->	2/ Generer stat
+					3/ Sauvegarder stat
+
+----------
+
+Besoins non-fonctionnels:
+
+- Rapidité
+- Sécurité
+- Facilité

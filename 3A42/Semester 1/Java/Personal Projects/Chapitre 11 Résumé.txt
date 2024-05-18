@@ -1,0 +1,58 @@
+Interface Fonctionnelles:
+
+- Functional interface is an interface that has only 1 abstract method.
+- You can create an object from a Functional Interface
+
+@FunctionalInterface
+public interface math{
+	int add(int x1, int x2);
+}
+
+math m1 = new math(){
+	@Override
+	int add(int x1, int x2){ //Faire la redifintion ici
+		return 0;
+	}
+};
+sout(m1.add(5, 6)); //Returns 11
+
+- Un objet anonyme est une instance d'une interface/classe abstraite sans nom.
+m1 est un objet annonyme.
+
+-------------------------------------------------
+
+Expression Lambda:
+
+- L'expression lambda makes the declaration of the object annonyme easier. Instead of doing the above we do now:
+
+math m1 = (int x1, intx2) -> { return x1 + x2; };
+- We can make it easier (( Check diapot p16 )):
+maht m1 = (x1, x2) -> x1 + x2;
+
+Les interfaces fonctionnelles prédéfinies: (Understand them easier voir diapot 21++)
+° public interface Function<T, R> { R apply(T t); } //Take un type d'entrée et renvoie un autre type.
+° public interface Consumer<T> { void accept(T t); } //Take 1 type parm, return nothing (void) "consumes"
+° public interface Predicate<T> { boolean test(T t); } //Take 1 parm, return bool
+° public interface Supplier<T> { T get(); } //Take 0 parm, returns whatever type (bool, int, float..)
+//UnaryOperator instead of Function prend 1 type and return another, it takes and return the same type!
+° public interface UnaryOperator<T> extends Function<T,T> { T apply(T t); } 
+//Read the other 2 diapot 26 & 27
+
+-----------------------------------------------------
+
+Les méthodes de référence:
+
+- Les méthodes de référence sont un type particulier d'expressions lambda.
+- Il existe quatre types de références de méthodes :
+
+1/ Référence à une méthode statique: (Voir diapot 32)
+Syntaxe: NomDeLaClasse::nomDeLaMethodeStatique
+
+2/ Référence à une méthode d'instance d'un objet particulier: (Voir diapot 34)
+Syntaxe: nomObjet::nomDeLaMethode
+
+3/ Référence à une méthode d'instance d'un type particulier: (Voir diapot 36)
+Syntaxe: NomDeLaClasse::nomDeLaMethode
+
+4/ Référence à un constructeur: (Voir diapot 38)
+Syntaxe: NomDeLaClasse::new

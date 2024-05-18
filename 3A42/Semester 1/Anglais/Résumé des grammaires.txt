@@ -1,0 +1,78 @@
+Modal of deduction in the present & past:
+
+might, may + verb (inf) ===========================> 50% chance possible <======== might, may + have + verb (past participle)
+Example: - They may be in the car.			      |			   - I think I might have left the air conditioning on.
+							      |
+Must + verb (inf) ===========================> 99% chance possible (Positive) <=== must have + verb (pp)
+Example: - That must be the main entrance		      |			   - It must have been someone close to him.
+							      |
+Can't + verb (inf) =========================> 99% chance impossible (Negative) <== can't + have + verb (pp)
+Example: - You can't be bored already!			      |			   - She can't have driven there.
+							      |
+--------------------------
+
+Passive Voice:
+
+Object + to be + Verb (pp) + subject (Him, people etc..) 
+
+Example of Active Sentence: - People eat sushi in many parts of the world.
+The result of Passive use:  - Sushi is eaten by many people in many parts of the world.
+
+--------------------------
+
+Third Type conditional:
+
+These sentences are in 2 halves (clauses)
+- the if part (if clase) (verbs in past perfect)
+- the other part where you can use: can, will, may, might, could and would (main clause)
+
+Examples: 
+- If you hadn’t stopped quickly, we would have crashed.
+- I wouldn’t have gone to the party if you hadn’t persuaded me to go.
+
+--------------------------
+
+DRC (Defining Relative Clauses) vs NDRC (Non-Defining Relative Clauses):
+
+- We use words to relate words: Who, Whose, Whom, Which, That, Where and When.
+DRC: Kind of necessary and there is no virgules in the sentence
+NDRC: Not necessary and we put it between 2 virgules.
+
+Examples: The stairs which/that lead to the cellar are rather slippery. <=== DRC, Which or That
+	  That block , which cost £5 million to build , has been empty for years <==== NDRC, two virgules + Which
+
+--------------------------
+
+Present Perfect Simple & Present Perfect Continious:
+
+Present Perfect Simple:
+(I, you, we, they) + have / haven't + PP (eaten, driven ..)
+(he, she, it) + has / hasn't + PP
+
+Present Perfect Continious:
+(I, you, we, they) + have / haven't + been + (Ing form)
+(he, she, it) + has / hasn't + been + (Ing form)	
+
+--------------------------
+
+Past Perfect Simple & Past Perfect Continious:
+
+Past Perfect Simple:
+(I, you, we, they, he, she, it) + Had / Hadn't + PP
+
+Past Perfect Continious:
+(I, you, we, they, he, she, it) + Had / Hadn't + been + Ing Form
+
+--------------------------
+
+Linking Words:
+
+Words to connect sentences and make them easier to understand like:
+
+In addition, Further
+Likewise, Just as
+Despite, However
+Therefore, So
+Such as, Like
+Because of, While
+As a result, Thus
